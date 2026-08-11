@@ -1,0 +1,154 @@
+# Theme-Audit PetWorld — Stand 11.08.2026
+
+Basis: Theme-Export `petworldatbackup110826`, unverändert als Commit `cacbd97` im Repo.
+
+## Ausgangslage
+
+| | |
+|---|---|
+| Theme | **Fabric 3.1.0** (Shopify, First-Party) |
+| Generation | Block-basiert (Horizon-Generation), nicht Dawn |
+| Dateien | 557 · 116 Sections · 87 Blocks · 130 Snippets · 56 Templates |
+| Sprachen | 51 Locale-Dateien (Standard) |
+
+Das Basis-Theme ist gut. Fabric ist modern, schnell und sauber gebaut. Die Probleme
+liegen nicht im Theme, sondern in dem, was darüber gestapelt wurde.
+
+---
+
+## Befund 1 — Produktseite ohne Preis und ohne Varianten-Auswahl
+
+**Schweregrad: kritisch**
+
+`templates/product.json` → Section `product-information` → `product-details` enthält:
+
+```
+group (icon: price_tag + Text "(89)")
+product-title
+buy-buttons  → quantity, add-to-cart, accelerated-checkout
+payment-icons
+accordion    → "Produktbeschreibung", "Pflegehinweise"
+```
+
+Kein `price`-Block. Kein `variant-picker`-Block. Beide existieren im Theme
+(`blocks/price.liquid`, `blocks/variant-picker.liquid`), sind aber nicht platziert.
+
+`sections/product-information.liquid` rendert nichts fest — die Section ist zu 100 %
+block-gesteuert (`{% content_for 'blocks' %}`). Es gibt also keinen Fallback.
+
+**Folge:** Preis und Größenauswahl kommen ausschließlich aus dem teeinblue-App-Embed.
+
+- Der Preis erscheint erst, nachdem teeinblue-JS geladen und initialisiert hat
+- Bei langsamer Verbindung oder App-Fehler: Produktseite mit Titel und Kaufen-Button,
+  ohne Preis
+- Preis fehlt im server-gerenderten HTML → relevant für Google Merchant Center,
+  Product-Schema und Preis-Snippets in der Suche
+
+**Der Block `group` mit `price_tag`-Icon und dem Text `(89)`** wirkt wie ein Überbleibsel:
+ein Icon für Preis, daneben eine nackte Zahl in Klammern — vermutlich eine verwaiste
+Bewertungsanzahl mit falschem Icon.
+
+**Zu tun:** `price`- und `variant-picker`-Block nativ platzieren, sodass das Theme
+funktioniert, auch wenn teeinblue hakt. teeinblue darf ergänzen, nicht tragen.
+
+---
+
+## Befund 2 — Drei Page-Builder gleichzeitig aktiv
+
+**Schweregrad: hoch**
+
+App-Embeds laut `config/settings_data.json`:
+
+| App | Status | Im Theme |
+|---|---|---|
+| GemPages | **an** | 60 `gp-section-*`, `gp-global.css` (68 KB), 52 Verweise auf `assets.gemcommerce.com` |
+| PageFly | **an** | App-Embed aktiv |
+| Shogun | — | 5 `shogun-*` Sections, 3 Layouts, eigene Templates |
+| smind / Sections Pro | **an** | `sp-*` Sections, `smi-swiper-bundle.min.js` (109 KB), `smi-footer-1.min.css` (29 KB) |
+| Opus Cart Upsell | **an** | Cart-Drawer |
+| teeinblue | **an** | Personalizer (App-Embed, injiziert sich selbst) |
+| Dakaas Store Effects | aus | — |
+
+**Die Live-Templates nutzen davon nichts.** Homepage und Produktseite laufen auf
+nativen Fabric-Sections plus den `sp-*`-Sections von smind:
+
+```
+index.json    hero · product-list · hero · section ·
+              sp-before-and-after · sp-tiles · sp-marquee · section
+
+product.json  product-information · section · section · sp-marquee · product-list
+```
+
+GemPages, PageFly und Shogun werden **auf keiner Live-Seite verwendet**, laden aber
+weiterhin auf jeder Seite ihre Skripte mit. Das ist der größte verfügbare
+Performance-Hebel.
+
+> ⚠️ Vor dem Deinstallieren prüfen: Es gibt 12 `page.gp-template-*.json`. Im Admin
+> kontrollieren, ob einer echten Seite so ein Template zugewiesen ist. Erst dann
+> deinstallieren.
+
+---
+
+## Befund 3 — Karteileichen
+
+- **31 von 56 Templates** sind Backups von Page-Buildern (`gem-`, `gp-template`, `shogun`)
+- **2,4 MB** allein an `gp-section-*.liquid`
+- `sections/sp-trust-badges.liquid` und `sp-faq.liquid` existieren, sind aber auf keiner
+  Live-Seite platziert — Trust-Elemente liegen also ungenutzt herum
+
+---
+
+## Befund 4 — Design-Tokens
+
+**Schriften** (`config/settings_data.json`):
+
+```
+type_body_font        asap_n5     type_heading_font   asap_n6
+type_subheading_font  asap_n5     type_accent_font    asap_n4
+```
+
+Eine einzige Schriftfamilie (**Asap**) für alle vier Rollen, unterschieden nur durch
+Strichstärke. Das ist der Hauptgrund, warum der Shop generisch wirkt — es gibt keine
+typografische Hierarchie, nur unterschiedlich fettes Grau.
+
+**Farben** (13 Schemata, davon `scheme-3` komplett transparent = defekt/ungenutzt):
+
+| Rolle | Wert |
+|---|---|
+| Hintergrund | `#f5f5f5` |
+| Text | `#1a1a1a` |
+| Primär / Akzent | `#76b2ae` (gedämpftes Petrol) |
+| Buttons | `#030302` auf Weiß |
+| Sale / Alarm | `#da3c24` |
+
+Die Palette selbst ist brauchbar — ruhig, warm-neutral, mit Petrol als Akzent.
+
+**Aber:** `foreground_heading` ist `#030302c2` — Schwarz mit 76 % Deckkraft.
+Überschriften werden also absichtlich ausgegraut. Das kostet Kontrast, wirkt
+verwaschen und ist ein Accessibility-Problem.
+
+---
+
+## Was der Export beantwortet
+
+| Frage | Antwort |
+|---|---|
+| 1 — Theme | Fabric 3.1.0, First-Party, block-basiert |
+| 3 — Code angefasst? | Nicht von Hand. Aber massiv von Apps überlagert |
+| 4 — Apps | GemPages, PageFly, Shogun, smind, Opus Cart Upsell, teeinblue |
+| 20 — Marke | Asap · Petrol `#76b2ae` · Schwarz · Off-White · Rot `#da3c24` |
+
+**Weiterhin offen:** Analytics-Zahlen (6–12), Stückkosten (13), Preisentscheidung (14),
+Markennamen (19), Referenz-Shops (21).
+
+---
+
+## Empfohlene Reihenfolge
+
+1. **Preis + Varianten-Picker nativ auf die PDP** — kleinster Aufwand, größte Wirkung
+2. **GemPages, PageFly, Shogun deinstallieren** (nach Template-Prüfung) und
+   Theme-Leichen entfernen
+3. **Typo-Hierarchie**: zweite Schriftfamilie für Headlines, Heading-Deckkraft auf 100 %
+4. **Homepage neu strukturieren**: zwei Heroes direkt hintereinander auflösen,
+   Trust-Bar und Reviews einbauen
+5. **Bundles und Foto-Reviews** — AOV und Social Proof
