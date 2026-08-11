@@ -1,0 +1,16 @@
+{%- comment -%}
+  robots.txt — Shopify default, aber /policies/ nicht blockieren.
+  Grund: In Österreich müssen Impressum, AGB und Datenschutz öffentlich
+  zugänglich und indexierbar sein (§ 5 ECG, § 14 UGB).
+{%- endcomment -%}
+{% for group in robots.default_groups %}
+  {{- group.user_agent }}
+  {%- for rule in group.rules -%}
+    {%- unless rule.directive == 'Disallow' and rule.value contains '/policies' -%}
+      {{ rule }}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- if group.sitemap -%}
+    {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}

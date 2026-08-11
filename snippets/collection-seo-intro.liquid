@@ -1,0 +1,51 @@
+{%- doc -%}
+  Rendert den SEO-Intro-Text einer Collection aus dem Metafield
+  `collection.seo_intro_text`. Nur sichtbar wenn gesetzt.
+  Wird UNTERHALB des Produkt-Grids eingefügt (SEO-Pattern: Nutzer sehen Produkte zuerst).
+{%- enddoc -%}
+
+{%- liquid
+  assign intro_value = collection.metafields.collection.seo_intro_text
+  if intro_value == blank
+    assign intro_value = collection.metafields.collection.seo_intro_text.value
+  endif
+-%}
+
+{% if intro_value != blank %}
+  <section
+    class="collection-seo-intro color-{{ section.settings.color_scheme | default: 'scheme-1' }}"
+    aria-labelledby="collection-seo-intro-heading-{{ collection.id }}"
+  >
+    <div class="collection-seo-intro__inner rte">
+      <h2
+        id="collection-seo-intro-heading-{{ collection.id }}"
+        class="collection-seo-intro__heading h4"
+      >
+        {{ 'collections.general.about_heading' | t: title: collection.title, default: collection.title }}
+      </h2>
+      {{ intro_value | newline_to_br }}
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .collection-seo-intro {
+    padding-block: var(--padding-xl, 48px);
+    padding-inline: var(--padding-md, 24px);
+  }
+
+  .collection-seo-intro__inner {
+    max-width: 72ch;
+    margin-inline: auto;
+    line-height: 1.65;
+  }
+
+  .collection-seo-intro__heading {
+    margin-block-end: var(--padding-sm, 16px);
+  }
+
+  .collection-seo-intro__inner a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+{% endstylesheet %}
