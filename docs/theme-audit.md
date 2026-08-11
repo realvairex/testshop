@@ -16,9 +16,14 @@ liegen nicht im Theme, sondern in dem, was darüber gestapelt wurde.
 
 ---
 
-## Befund 1 — Produktseite ohne Preis und ohne Varianten-Auswahl
+## Befund 1 — Preis und Varianten kommen ausschließlich aus teeinblue
 
-**Schweregrad: kritisch**
+**Schweregrad: mittel**
+
+> **Korrektur 11.08.2026:** Ursprünglich als "Produktseite ohne Preis" notiert. Ein
+> Screenshot der Live-Seite zeigt: Preis (€19,95, Streichpreis, Sale-Badge) und
+> Varianten (Rahmen, Größen) **werden angezeigt** — teeinblue rendert sie selbst.
+> Der Befund bleibt bestehen, aber als Robustheits- und SEO-Thema, nicht als Notfall.
 
 `templates/product.json` → Section `product-information` → `product-details` enthält:
 
@@ -38,18 +43,19 @@ block-gesteuert (`{% content_for 'blocks' %}`). Es gibt also keinen Fallback.
 
 **Folge:** Preis und Größenauswahl kommen ausschließlich aus dem teeinblue-App-Embed.
 
-- Der Preis erscheint erst, nachdem teeinblue-JS geladen und initialisiert hat
+- Beides erscheint erst, nachdem teeinblue-JS geladen und initialisiert hat
 - Bei langsamer Verbindung oder App-Fehler: Produktseite mit Titel und Kaufen-Button,
-  ohne Preis
+  ohne Preis und ohne Auswahl
 - Preis fehlt im server-gerenderten HTML → relevant für Google Merchant Center,
   Product-Schema und Preis-Snippets in der Suche
 
-**Der Block `group` mit `price_tag`-Icon und dem Text `(89)`** wirkt wie ein Überbleibsel:
-ein Icon für Preis, daneben eine nackte Zahl in Klammern — vermutlich eine verwaiste
-Bewertungsanzahl mit falschem Icon.
+**Der Block `group` mit `price_tag`-Icon und dem Text `(89)`** ist die Bewertungsanzahl.
+Auf der Live-Seite stehen davor 4,5 Sterne, die eine Bewertungs-App rendert. Das Icon
+`price_tag` passt nicht dazu und gehört auf ein Stern-Icon geändert.
 
-**Zu tun:** `price`- und `variant-picker`-Block nativ platzieren, sodass das Theme
-funktioniert, auch wenn teeinblue hakt. teeinblue darf ergänzen, nicht tragen.
+**Zu tun:** Prüfen, ob teeinblue einen App-Block statt eines Embeds anbietet. Falls ja,
+umstellen — dann ist die Platzierung im Theme-Editor steuerbar und wir können Preis,
+Varianten und Trust-Elemente gezielt drumherum anordnen.
 
 ---
 
