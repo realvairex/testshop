@@ -95,6 +95,5 @@ Begründungen und alles Weitere in `docs/entscheidungen.md` (E1–E18).
 | Gestaltung und Fabric-Eigenheiten | `.claude/skills/petworld-design/SKILL.md` |
 | Einstieg und Gesamtstand | `docs/README.md` |
 
-**Zwei Themen mit Betreiber-Entscheidung „vorerst so lassen":** erfundene Bewertungen
-(E11) und die Markennamen DOGUE, FURBES & Co (E12, `docs/markennamen.md`). Nicht erneut
-aufrollen, außer die Produktseiten werden ohnehin überarbeitet.
+**Betreiber hat „vorerst so lassen" entschieden:** erfundene Bewertungen (E11) und die
+Markennamen (E12). Nicht erneut aufrollen, außer die Produktseiten werden ohnehin angefasst.
