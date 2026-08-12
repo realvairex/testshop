@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<p>Mit Herz für Haustiere!</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "2rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_nMqXwC": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Wir sind <strong>Julian (22)</strong> und <strong>Alex (24)</strong>, zwei Tierliebhaber, die PetWorld gegründet haben, um Haustierbesitzern personalisierbare Produkte zu bieten, die sowohl funktional als auch einzigartig sind.</p><p> </p><p>In der ersten Phase konzentrieren wir uns auf Produkte wie <strong>Puzzle</strong>, <strong>Poster</strong>, <strong>Kalender</strong>, <strong>Kissen</strong>, <strong>Hundebetten</strong> und <strong>Tassen</strong> – alles personalisierbar, damit du etwas ganz Besonderes für dein Haustier kreieren kannst. Unsere Produkte werden von einem erfahrenen Partner produziert, der sich auf hochwertige, personalisierbare Artikel spezialisiert hat.</p><p> </p><p><strong>Warum PetWorld?</strong></p><ul><li><strong>Individuell</strong>: Gestalte Produkte, die deine Persönlichkeit und die deines Haustiers widerspiegeln.</li><li><strong>Qualität</strong>: Wir bieten dir nur Produkte, die langlebig und sorgfältig gefertigt sind.</li><li><strong>Einfach</strong>: Deine Bestellung wird schnell und zuverlässig zu dir nach Hause geliefert.</li></ul><p><em><strong>PetWorld ist mehr als nur ein Shop – es geht darum, das Leben mit deinem Haustier noch schöner und persönlicher zu gestalten.</strong></em></p>",
+            "width": "100%",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_nMqXwC"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "gap": 10,
+        "color_scheme": "scheme-7e76d070-642f-4b91-91c1-b5364c47dceb",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

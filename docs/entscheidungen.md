@@ -44,3 +44,7 @@ gleichen Stand hat.
 |---|---|---|
 | 11.08. | „Produktseite ohne Preis" | Falsch. Preis und Varianten **werden** angezeigt — teeinblue rendert sie selbst. Bleibt ein Robustheits- und SEO-Thema, aber kein Notfall. |
 | 11.08. | „Customily lohnt sich nicht" | Zu absolut. Basierte auf der Annahme, dass Fulfillment kein Schmerzpunkt ist. Der Betreiber hat widersprochen — Bewertung wurde überarbeitet. |
+| 12.08. | **K1** — „GemPages wird auf keiner Live-Seite genutzt" | Falsch. Fünf veröffentlichte Seiten nutzen `gp-template`-Suffixe. Die Zuweisung steht im Admin (`templateSuffix`), nicht in den Theme-Templates. |
+| 12.08. | **K2** — „Das 109-KB-Swiper-Bundle belastet die Ladezeit" | Falsch. Es war von keiner Datei referenziert und wurde nie geladen. Der echte Kostenfaktor sind die App-Embeds, nicht die Theme-Dateien. |
+| 12.08. | **K3** — „FAQ, Über uns, Kontakt, Bild-Leitfaden und Weiterempfehlen sind über kein Menü erreichbar" | **Falsch.** Geprüft wurden nur die Shopify-Menü-Objekte. Fabric verlinkt alle fünf Seiten über `button`-Blöcke in `sections/footer-group.json`. **Lehre: Navigation immer in beiden Quellen prüfen.** |
+| 12.08. | **K4** — „Der Über-uns-Text existiert nur in GemPages" | Falsch. Er stand im Standard-Template `templates/page.json` und wurde darüber ausgeliefert. Inzwischen in ein eigenes `page.about-us.json` ausgelagert. |

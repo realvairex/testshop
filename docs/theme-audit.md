@@ -101,27 +101,35 @@ product.json  product-information · section · section · sp-marquee · product
 Die fünf betroffenen Seiten: `/pages/faq`, `/pages/kontakt`, `/pages/ueber-uns`,
 `/pages/weiterempfehlen`, `/pages/bild-leitfaden` — alle veröffentlicht.
 
-### Aber: Diese fünf Seiten sind verwaist
+### Diese fünf Seiten sind unverlinkt — die nativen Zwillinge aber nicht
 
-Sie sind in **keinem Menü** verlinkt. Der einzige Ort im gesamten Theme, der auf sie
-zeigt, ist `sections/gp-global-section-562366337729430539.liquid` — die GemPages-eigene
-Kopf-/Fußzeile, die nur auf GemPages-Templates gerendert wird.
+> **Korrektur 12.08.2026.** Eine frühere Fassung behauptete hier, FAQ, Über uns,
+> Kontakt, Bild-Leitfaden und Weiterempfehlen seien für Kunden überhaupt nicht
+> erreichbar. **Das war falsch.** Die Prüfung hatte nur die Shopify-Menü-Objekte
+> betrachtet. Fabric verlinkt diese Seiten jedoch über fest gesetzte `button`-Blöcke
+> in `sections/footer-group.json`.
 
-**Es ist eine geschlossene Insel:** fünf Seiten, die sich gegenseitig verlinken, vom
-restlichen Shop aus aber nicht erreichbar.
+Tatsächlich verlinkt die Fußzeile unter der Überschrift „Übersicht":
 
-Gleichzeitig existiert zu jeder von ihnen eine **native Zweitfassung** (`faqs-2`,
-`kontakt2`, `about-us`, `weiterempfehlen-2`, `leitfaden`) — ebenfalls veröffentlicht,
-ebenfalls in keinem Menü.
+| Label | Ziel | Fassung |
+|---|---|---|
+| FAQs | `/pages/contact` | nativ (`faqs-2`) |
+| Über uns | `/pages/uber-uns` | nativ (`about-us`) |
+| Weiterempfehlen | `/pages/weiterempfehlen-1` | nativ (`weiterempfehlen-2`) |
+| Bilder-Leitfaden | `/pages/leitfaden` | nativ (`leitfaden`) |
+| Kontakt | `/pages/kontakt-1` | nativ (`kontakt2`) |
 
-**Zwei Konsequenzen:**
+**Verlinkt ist also durchgehend die native Fassung.** Die fünf GemPages-Seiten sind die
+unverlinkten Zwillinge — erreichbar nur untereinander über die GemPages-eigene
+Kopfzeile.
 
-1. **Kunden erreichen weder FAQ noch Über uns, Kontakt, Bild-Leitfaden oder
-   Weiterempfehlen.** Das Hauptmenü führt ausschließlich zu Kollektionen, die Fußzeile
-   nur zu den fünf Rechtstexten. Besonders bitter beim **Bild-Leitfaden** — die
-   Anleitung für ein gutes Foto ist die Voraussetzung für ein gutes Poster.
-2. **Doppelte Inhalte im Index.** Beide Fassungen sind veröffentlicht und
-   crawlbar → SEO-Kannibalisierung.
+**Was bleibt:**
+
+1. **Doppelte Inhalte im Index.** Beide Fassungen sind veröffentlicht und crawlbar →
+   SEO-Kannibalisierung. Per 301-Weiterleitung von der GemPages- auf die native URL
+   zu bereinigen.
+2. **Die Fußzeile ist der einzige Weg dorthin.** Der Bilder-Leitfaden gehört
+   zusätzlich direkt an den Foto-Upload auf der Produktseite — dort wird er gebraucht.
 
 ### Daraus folgt für das Aufräumen
 

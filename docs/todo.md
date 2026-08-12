@@ -22,16 +22,19 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 
 ## 🔨 Bei mir — Theme
 
-### Jetzt: Navigation (größter schneller Hebel)
+### Jetzt: Seiten bereinigen
 
-Kunden erreichen aktuell **weder FAQ noch Über uns, Kontakt, Bild-Leitfaden oder
-Weiterempfehlen.** Hauptmenü führt nur zu Kollektionen, Fußzeile nur zu Rechtstexten.
+> Korrigiert am 12.08.: Die Fußzeile verlinkt alle fünf Service-Seiten bereits — über
+> `button`-Blöcke in `footer-group.json`, nicht über ein Shopify-Menü. Siehe Korrektur
+> K3 in `entscheidungen.md`. Die Aufgabe ist damit kleiner als geplant.
 
-- [ ] Menü-Links auf die **nativen** Seiten setzen (`faqs-2`, `kontakt2`, `leitfaden`, `weiterempfehlen-2`)
-- [ ] Über-uns-Seite nativ bauen — Text aus `docs/archiv-gempages/INHALTE.md` (Gründergeschichte Julian & Alex)
-- [ ] Weiterleitungen der GemPages-URLs auf die nativen Fassungen
-- [ ] Doppelte Seiten zusammenführen (Impressum existiert zweimal)
+- [x] **`page.about-us.json` angelegt** — der Über-uns-Text lag im Standard-Template
+      `page.json` und wurde dadurch auf jeder Seite ohne eigenes Template ausgespielt
+- [x] **`page.json` neutralisiert** — zeigt jetzt Seitentitel und Seiteninhalt
+- [ ] 301-Weiterleitungen der fünf GemPages-URLs auf die nativen Fassungen
+- [ ] Doppeltes Impressum zusammenführen (`impressum` und `copy-of-uber-uns`)
 - [ ] Erst danach: GemPages-Dateien entfernen — 60 Sections, 31 Templates, `gp-global.css`
+- [ ] Bilder-Leitfaden zusätzlich direkt an den Foto-Upload auf der Produktseite legen
 
 ### Danach: Produktseite
 

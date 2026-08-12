@@ -78,15 +78,22 @@ eine `.mcp.json` in ein Repo bringt, das an den Live-Shop gekoppelt wird.
   erste Einschätzung fast gescheitert: Fünf veröffentlichte Seiten hängen an
   GemPages, obwohl im Theme nichts darauf hindeutet.
 
-## Navigationslücke
+## Navigation — Achtung, Fabric arbeitet ohne Menü-Objekte
 
-Das Hauptmenü führt nur zu Kollektionen, die Fußzeile nur zu den fünf Rechtstexten.
-**FAQ, Über uns, Kontakt, Bild-Leitfaden und Weiterempfehlen sind über kein Menü
-erreichbar** — jede dieser Seiten existiert sogar doppelt (eine GemPages- und eine
-native Fassung), beide veröffentlicht, beide unverlinkt.
+**Die Fußzeile verlinkt FAQ, Über uns, Weiterempfehlen, Bilder-Leitfaden und Kontakt.**
+Diese Links stehen aber **nicht** in einem Shopify-Menü, sondern als fest gesetzte
+`button`-Blöcke in `sections/footer-group.json`.
 
-Der Bild-Leitfaden ist besonders wichtig: Ein gutes Kundenfoto ist die Voraussetzung
-für ein gutes Poster. Aktuell findet ihn niemand.
+Wer nur die Menü-Objekte über die API prüft (`main-menu`, `footer`), sieht sie nicht
+und hält die Seiten fälschlich für unverlinkt. Genau dieser Fehler ist am 12.08.
+passiert — siehe Korrektur K3 in `docs/entscheidungen.md`.
+
+**Regel: Navigation immer in beiden Quellen prüfen** — Shopify-Menüs *und*
+`footer-group.json` / `header-group.json`.
+
+Offen bleibt: Jede dieser Seiten existiert **doppelt** (eine GemPages- und eine native
+Fassung), beide veröffentlicht. Verlinkt ist jeweils die native. Die GemPages-Zwillinge
+sind unverlinkt, aber indexierbar → doppelte Inhalte, per Weiterleitung zu bereinigen.
 
 ## Die wichtigsten Befunde
 
