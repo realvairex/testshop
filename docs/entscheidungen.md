@@ -20,6 +20,8 @@ gleichen Stand hat.
 | E11 | **Fake-Bewertungen bleiben vorerst** | Betreiber-Entscheidung vom 12.08.: wird beim Design-Umbau angegangen, nicht jetzt. Technisch ein Stern-SVG plus getippte „(89)" in `templates/product.json` — jederzeit in Minuten entfernbar. |
 | E12 | **Markennamen bleiben vorerst** | Betreiber-Entscheidung vom 12.08. Siehe `docs/markennamen.md` für die Faktenlage und den risikoärmeren Kompromiss. |
 | E13 | **KALENDAR und PUZZLE sind geplante Produktreihen** | Keine Karteileichen. Solange leer, sollten sie aber nicht im Menü verlinkt sein. |
+| E14 | **Vertrauens-Elemente nativ bauen, nicht über Smind** | Ursprünglich war `sp-trust-badges` geplant. Beim Bauen umentschieden: Native Fabric-Blöcke überleben eine App-Deinstallation, nutzen die Theme-Farben automatisch und sparen eine Abhängigkeit. Gilt als Regel für alle weiteren Bausteine. |
+| E15 | **Sitzungen laufen über `start petworld` und `ende petworld`** | Klartext-Befehle ohne Schrägstrich, hinterlegt als Skills. Sorgt dafür, dass jede neue Sitzung denselben Stand hat und beim Abschluss kein Wissen im Chat zurückbleibt. |
 
 ## Offen — muss der Betreiber entscheiden
 
@@ -50,3 +52,4 @@ gleichen Stand hat.
 | 12.08. | **K4** — „Der Über-uns-Text existiert nur in GemPages" | Falsch. Er stand im Standard-Template `templates/page.json` und wurde darüber ausgeliefert. Inzwischen in ein eigenes `page.about-us.json` ausgelagert. |
 | 12.08. | **K5** — „Überschriften auf 76 % Deckkraft sind ein Accessibility-Problem" | Falsch. Gerechnet ergibt `#030302c2` auf `#f5f5f5` **10,0:1** und erfüllt AA wie AAA. Es bleibt ein gestalterisches Thema, kein Barrierefreiheits-Mangel. Details in `kontrast-audit.md`. |
 | 12.08. | **K6** — „Unsichtbare Überschriften auf Startseite, Kontakt und Weiterempfehlen" | Falsch. Die Schema-Verwendung war per Textsuche ermittelt, was auch ungenutzte Block-Einstellungen trifft. Tatsächlich 16:1. **Lehre: Verwendung über die Block-Zuordnung prüfen, und bei Sections mit Medien gilt die Schema-Farbe nicht.** |
+| 12.08. | **K7** — Zwei eigene Fehlalarme bei Integritätsprüfungen | `buy_buttons` mit leerem `block_order` wurde als Inkonsistenz gemeldet — es ist Shopifys Normalzustand für statische Kindblöcke. Und ein `{% render %}` in einem `{%- doc -%}`-Kommentarblock wurde als fehlendes Snippet gemeldet. **Lehre: Prüfskripte gegen die Baseline `cacbd97` abgleichen, bevor ein Befund gemeldet wird — und Kommentarblöcke ausnehmen.** Technische Details in `.claude/skills/petworld-design/SKILL.md`. |

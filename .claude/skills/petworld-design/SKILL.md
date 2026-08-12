@@ -25,6 +25,40 @@ Blocks werden über `{% content_for 'blocks' %}` gerendert. Neue Bausteine gehö
 `blocks/`, nicht als Hardcode in Sections — sonst kann der Betreiber sie im Theme-Editor
 nicht mehr anordnen.
 
+## Fabric-Eigenheiten, die schon Zeit gekostet haben
+
+Hart erarbeitet am 12.08.2026. Vor dem nächsten Template-Umbau lesen.
+
+**`closest.page.title`, nicht `page.title`.**
+Liquid **wird** in den `text`-Einstellungen der Blöcke ausgewertet, aber Fabric-Blöcke
+greifen über `closest.*` auf die Ressource zu. `{{ page.title }}` bleibt leer.
+Vorbild ist `templates/page.faqs.json`:
+
+```json
+"text": "<h1>{{ closest.page.title }}</h1>", "type_preset": "h2"
+```
+
+**`main-page` rendert nichts von selbst.** Die Section enthält nur
+`{% content_for 'blocks' %}` — Titel und Inhalt müssen als `text`- und
+`page-content`-Blöcke gesetzt werden.
+
+**Leeres `block_order` ist nicht kaputt.** `buy-buttons` hat im Original-Export drei
+Kindblöcke bei `block_order: []`. Das ist Shopifys eigener Zustand für statische
+Kindblöcke — **nicht reparieren.**
+
+**Beim Suchen nach Referenzen `{%- doc -%}`-Blöcke ausnehmen.** Fabric-Snippets
+enthalten Anwendungsbeispiele mit `{% render '…' %}` in der Dokumentation. Eine naive
+Textsuche meldet sie als fehlende Snippets.
+
+**Verfügbare Icons im `icon`-Block** (Auswahl der brauchbaren, insgesamt 59):
+`truck` · `stopwatch` · `lock` · `leaf` · `map_pin` · `paw_print` · `heart` ·
+`star` · `return` · `recycle` · `ruler` · `eye` · `question_mark` · `check_box` ·
+`plane` · `lightning_bolt` · `price_tag`
+Breite 12–200 in Zweierschritten, Standard 24.
+
+**Gültige `type_preset`-Werte im `text`-Block:**
+`rte` · `paragraph` · `h1`–`h6` · `custom`
+
 ## Token-Architektur
 
 Drei Schichten, als CSS Custom Properties:
