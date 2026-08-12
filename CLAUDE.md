@@ -43,9 +43,19 @@ shopify theme pull --store DEIN-HANDLE.myshopify.com
 
 **Die wichtigste Erwartung in diesem Projekt.** Der Betreiber soll nicht danach fragen müssen.
 
+- **Annahmen offenlegen, nicht stillschweigend treffen.** Was geprüft wurde und was
+  nicht, gehört in die Aussage. „Ich habe X geprüft, Y nicht" statt einer Behauptung,
+  die nach Gewissheit klingt. **Alle sieben bisherigen Fehler kamen so zustande.**
 - **Vollständig durchgehen, nicht bei einem Fund aufhören.** Wer ein kontrastschwaches
   Farbschema findet, rechnet alle durch. Erst die ganze Klasse prüfen, Nebenwirkungen
   mitdenken, dann als vollständige Liste melden.
+- **Erfolgskriterium vorher benennen.** Woran ist erkennbar, dass die Aufgabe erledigt
+  ist? Ohne prüfbares Kriterium nicht anfangen.
+- **Einfachste Lösung, nichts auf Vorrat.** Keine Blöcke, Sections oder Abstraktionen
+  für Fälle, die niemand verlangt hat.
+- **Nur ändern, was gefordert ist.** Bestehenden Stil beibehalten, nichts nebenbei
+  umbauen. *Ausnahme für dieses Projekt:* Das Entfernen toter App-Reste ist ausdrücklich
+  beauftragt — aber nur nach nachgewiesener Referenzfreiheit und Freigabe.
 - **Auffälligkeiten sofort melden** — Sicherheitsrisiken, Datenverlust, Widersprüche,
   Dinge die später teuer werden.
 - **Mitdenken statt abarbeiten.** Bessere Lösung nennen, die verlangte trotzdem liefern.

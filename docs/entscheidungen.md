@@ -22,6 +22,8 @@ gleichen Stand hat.
 | E13 | **KALENDAR und PUZZLE sind geplante Produktreihen** | Keine Karteileichen. Solange leer, sollten sie aber nicht im Menü verlinkt sein. |
 | E14 | **Vertrauens-Elemente nativ bauen, nicht über Smind** | Ursprünglich war `sp-trust-badges` geplant. Beim Bauen umentschieden: Native Fabric-Blöcke überleben eine App-Deinstallation, nutzen die Theme-Farben automatisch und sparen eine Abhängigkeit. Gilt als Regel für alle weiteren Bausteine. |
 | E15 | **Sitzungen laufen über `start petworld` und `ende petworld`** | Klartext-Befehle ohne Schrägstrich, hinterlegt als Skills. Sorgt dafür, dass jede neue Sitzung denselben Stand hat und beim Abschluss kein Wissen im Chat zurückbleibt. |
+| E16 | **CLAUDE.md bleibt unter 100 Zeilen** | Ab etwa 80 Zeilen werden Teile überlesen — ausgerechnet die nicht verhandelbaren Regeln gehen dann unter. Am 12.08. von 247 auf 87 Zeilen gekürzt, Detailinhalt in die Fachdokumente verschoben. **Bei jeder Erweiterung prüfen, ob es nicht in ein Dokument gehört.** |
+| E17 | **Vier Karpathy-Prinzipien übernommen, eines angepasst** | Aus `multica-ai/andrej-karpathy-skills`, eingearbeitet in die Grundhaltung: Annahmen offenlegen · einfachste Lösung · nur ändern was gefordert ist · Erfolgskriterium vorher benennen. **Angepasst:** „Vorhandenen toten Code nur erwähnen, nicht löschen" gilt hier nicht — das Entfernen toter App-Reste ist ausdrücklich beauftragt. Der Kern bleibt aber: erst Referenzfreiheit nachweisen, dann Freigabe, dann löschen. **Nicht als Plugin installiert**, aus demselben Grund wie E5. |
 
 ## Offen — muss der Betreiber entscheiden
 
