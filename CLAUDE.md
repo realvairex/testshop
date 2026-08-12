@@ -40,9 +40,9 @@ Bisher wurde **kein Theme-Code verändert**. Alles bis hier ist Analyse.
 | teeinblue Product Personalizer | aktiv, App-**Embed** | Kern des Geschäfts. Fulfillment-Workflow gilt als problematisch. |
 | smind / Sections Pro | aktiv | wird genutzt (`sp-*` Sections) |
 | Opus Cart Upsell | aktiv | wird genutzt |
-| GemPages | aktiv | **auf keiner Live-Seite genutzt** — Kandidat zum Deinstallieren |
-| PageFly | aktiv | **auf keiner Live-Seite genutzt** — Kandidat zum Deinstallieren |
-| Shogun | Reste im Theme | **auf keiner Live-Seite genutzt** — Kandidat zum Deinstallieren |
+| GemPages | aktiv | ⚠️ **5 veröffentlichte Seiten hängen daran** — erst nativ nachbauen, dann deinstallieren |
+| PageFly | aktiv | ✅ von keinem Objekt referenziert — sofort deinstallierbar |
+| Shogun | Reste im Theme | ✅ von keinem Objekt referenziert — sofort deinstallierbar |
 | Dakaas Store Effects | deaktiviert | — |
 
 ## Getroffene Architektur-Entscheidungen
@@ -73,8 +73,20 @@ eine `.mcp.json` in ein Repo bringt, das an den Live-Shop gekoppelt wird.
   `shopify theme dev` legt automatisch ein Dev-Theme an und ist sicher.
 - **Keine API-Keys, Theme-Access-Passwörter oder Tokens in den Chat.** Falls nötig:
   `.env` mit `.gitignore`.
-- **Vor dem Löschen der Page-Builder-Dateien** muss im Shopify-Admin geprüft werden, ob
-  eine echte Seite ein `gp-template` zugewiesen hat. Es gibt 12 solcher Templates.
+- **Vor dem Löschen von Page-Builder-Dateien** immer die `templateSuffix`-Zuweisung
+  über den Connector prüfen — nicht nur die Theme-Templates. Genau daran wäre die
+  erste Einschätzung fast gescheitert: Fünf veröffentlichte Seiten hängen an
+  GemPages, obwohl im Theme nichts darauf hindeutet.
+
+## Navigationslücke
+
+Das Hauptmenü führt nur zu Kollektionen, die Fußzeile nur zu den fünf Rechtstexten.
+**FAQ, Über uns, Kontakt, Bild-Leitfaden und Weiterempfehlen sind über kein Menü
+erreichbar** — jede dieser Seiten existiert sogar doppelt (eine GemPages- und eine
+native Fassung), beide veröffentlicht, beide unverlinkt.
+
+Der Bild-Leitfaden ist besonders wichtig: Ein gutes Kundenfoto ist die Voraussetzung
+für ein gutes Poster. Aktuell findet ihn niemand.
 
 ## Die wichtigsten Befunde
 

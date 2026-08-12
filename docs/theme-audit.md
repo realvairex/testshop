@@ -85,13 +85,51 @@ index.json    hero · product-list · hero · section ·
 product.json  product-information · section · section · sp-marquee · product-list
 ```
 
-GemPages, PageFly und Shogun werden **auf keiner Live-Seite verwendet**, laden aber
-weiterhin auf jeder Seite ihre Skripte mit. Das ist der größte verfügbare
-Performance-Hebel.
+> **Korrektur 12.08.2026 — die Prüfung über den Shopify-Connector hat ergeben, dass
+> „auf keiner Live-Seite verwendet" für GemPages falsch war.** Die Zuweisung passiert
+> über `templateSuffix` im Admin, nicht in den Theme-Templates. Details unten.
 
-> ⚠️ Vor dem Deinstallieren prüfen: Es gibt 12 `page.gp-template-*.json`. Im Admin
-> kontrollieren, ob einer echten Seite so ein Template zugewiesen ist. Erst dann
-> deinstallieren.
+### Was tatsächlich womit läuft
+
+| Objekt | Template | Folge |
+|---|---|---|
+| **Alle Produkte** | nativ (`templateSuffix` leer) | ✅ unberührt |
+| Kollektion BESTSELLER | `gp-template-562355879467287637` | Template **existiert nicht im Theme** → Rückfall auf `collection.json` ✅ |
+| Kollektion POSTER | dieselbe, ebenfalls fehlend | ✅ läuft bereits nativ |
+| **5 Seiten** | `gp-template-*`, **existieren** | ⚠️ **brechen beim Deinstallieren** |
+
+Die fünf betroffenen Seiten: `/pages/faq`, `/pages/kontakt`, `/pages/ueber-uns`,
+`/pages/weiterempfehlen`, `/pages/bild-leitfaden` — alle veröffentlicht.
+
+### Aber: Diese fünf Seiten sind verwaist
+
+Sie sind in **keinem Menü** verlinkt. Der einzige Ort im gesamten Theme, der auf sie
+zeigt, ist `sections/gp-global-section-562366337729430539.liquid` — die GemPages-eigene
+Kopf-/Fußzeile, die nur auf GemPages-Templates gerendert wird.
+
+**Es ist eine geschlossene Insel:** fünf Seiten, die sich gegenseitig verlinken, vom
+restlichen Shop aus aber nicht erreichbar.
+
+Gleichzeitig existiert zu jeder von ihnen eine **native Zweitfassung** (`faqs-2`,
+`kontakt2`, `about-us`, `weiterempfehlen-2`, `leitfaden`) — ebenfalls veröffentlicht,
+ebenfalls in keinem Menü.
+
+**Zwei Konsequenzen:**
+
+1. **Kunden erreichen weder FAQ noch Über uns, Kontakt, Bild-Leitfaden oder
+   Weiterempfehlen.** Das Hauptmenü führt ausschließlich zu Kollektionen, die Fußzeile
+   nur zu den fünf Rechtstexten. Besonders bitter beim **Bild-Leitfaden** — die
+   Anleitung für ein gutes Foto ist die Voraussetzung für ein gutes Poster.
+2. **Doppelte Inhalte im Index.** Beide Fassungen sind veröffentlicht und
+   crawlbar → SEO-Kannibalisierung.
+
+### Daraus folgt für das Aufräumen
+
+| App | Verdikt |
+|---|---|
+| **PageFly** | ✅ **Sofort deinstallierbar** — kein Objekt referenziert sie |
+| **Shogun** | ✅ **Sofort deinstallierbar** — kein Objekt referenziert sie |
+| **GemPages** | ⚠️ Erst die 5 Seiten nativ nachbauen und Weiterleitungen setzen, dann deinstallieren |
 
 ---
 
