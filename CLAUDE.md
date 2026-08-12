@@ -45,7 +45,7 @@ shopify theme pull --store DEIN-HANDLE.myshopify.com
 
 - **Annahmen offenlegen, nicht stillschweigend treffen.** Was geprüft wurde und was
   nicht, gehört in die Aussage. „Ich habe X geprüft, Y nicht" statt einer Behauptung,
-  die nach Gewissheit klingt. **Alle sieben bisherigen Fehler kamen so zustande.**
+  die nach Gewissheit klingt. **Alle acht bisherigen Fehler kamen so zustande.**
 - **Vollständig durchgehen, nicht bei einem Fund aufhören.** Wer ein kontrastschwaches
   Farbschema findet, rechnet alle durch. Erst die ganze Klasse prüfen, Nebenwirkungen
   mitdenken, dann als vollständige Liste melden.
@@ -71,14 +71,14 @@ shopify theme pull --store DEIN-HANDLE.myshopify.com
 - **Selbst dokumentieren, selbst committen** — ohne Aufforderung.
 
 Jeder gefundene Shop-Fehler → `docs/bugs.md`. Jede eigene Fehleinschätzung → `K…`-Eintrag
-in `docs/entscheidungen.md`, **mit der Lehre daraus**. Bisher sieben, alle lesenswert.
+in `docs/entscheidungen.md`, **mit der Lehre daraus**. Bisher acht, alle lesenswert.
 
 ## Architektur-Entscheidungen
 
 Kurz: **Liquid bleibt** (Headless würde teeinblue zerstören) · **Motion One** statt
 Framer Motion · **dreischichtige Design-Tokens** · **Bausteine nativ statt über Apps** ·
 **Design zuerst als HTML-Prototyp**, erst nach Freigabe in Liquid.
-Begründungen und alles Weitere in `docs/entscheidungen.md` (E1–E17).
+Begründungen und alles Weitere in `docs/entscheidungen.md` (E1–E18).
 
 ## Wo was steht
 
