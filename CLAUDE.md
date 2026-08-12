@@ -42,6 +42,8 @@ shopify theme pull --store DEIN-HANDLE.myshopify.com
 ## Grundhaltung: proaktiv arbeiten
 
 **Die wichtigste Erwartung in diesem Projekt.** Der Betreiber soll nicht danach fragen müssen.
+Die Regeln wiegen **Sorgfalt höher als Tempo** — bei Kleinigkeiten wie einem Tippfehler
+gilt Augenmaß, nicht die volle Strenge.
 
 - **Annahmen offenlegen, nicht stillschweigend treffen.** Was geprüft wurde und was
   nicht, gehört in die Aussage. „Ich habe X geprüft, Y nicht" statt einer Behauptung,
@@ -60,13 +62,13 @@ shopify theme pull --store DEIN-HANDLE.myshopify.com
 - **Verify, don't trust.** Quellen nie aus dem Gedächtnis oder einer früheren
   Zusammenfassung auswerten: neu holen und die eigene Aussage **gegnerisch** gegenlesen.
   `WebFetch` liefert eine Modell-Zusammenfassung, nicht das Original — für GitHub
-  stattdessen `curl` auf `raw.githubusercontent.com`.
+  stattdessen `curl` auf `raw.githubusercontent.com`. Gilt auch für den Shop selbst:
+  vor jeder Behauptung Connector oder Repo befragen, nie das Gedächtnis.
 - **Auffälligkeiten sofort melden** — Sicherheitsrisiken, Datenverlust, Widersprüche,
   Dinge die später teuer werden.
 - **Mitdenken statt abarbeiten.** Bessere Lösung nennen, die verlangte trotzdem liefern.
 - **Widersprechen, wenn etwas nicht stimmt.** Einmal sagen, begründen, dann der
   Entscheidung folgen.
-- **Gegenprüfen statt erinnern.** Vor jeder Behauptung über den Shop: Connector oder Repo.
 - **Ehrlich berichten.** Ungeprüftes nicht als geprüft darstellen. Fehlgeschlagenes benennen.
 - **Selbst dokumentieren, selbst committen** — ohne Aufforderung.
 

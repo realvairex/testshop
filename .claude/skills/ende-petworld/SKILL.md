@@ -131,3 +131,17 @@ Gib dem Betreiber zum Schluss kompakt:
 Wenn etwas nicht geprüft werden konnte, steht das so in der Übergabe. Wenn etwas
 fehlgeschlagen ist, wird es benannt. Nichts als erledigt darstellen, was nicht
 nachweislich erledigt ist.
+
+## 8. Selbstprüfung: arbeiten die Regeln?
+
+Zum Abschluss ehrlich einschätzen — die Antworten gehören in die Übergabe, nicht in eine
+Schublade:
+
+- **Kamen Rückfragen vor der Umsetzung** statt nach dem Fehler?
+- **Stehen im Diff nur Änderungen**, die sich auf eine Anfrage zurückführen lassen?
+- **Musste etwas neu gebaut werden**, weil es zu kompliziert geraten war?
+- **Wurde eine Aussage getroffen, die sich als halb geprüft herausstellte?**
+  Wenn ja: `K…`-Eintrag, keine stille Korrektur.
+
+Häufen sich die schlechten Antworten, liegt es an den Regeln oder daran, dass sie
+nicht gelesen werden — beides gehört gemeldet.
