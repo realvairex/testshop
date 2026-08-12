@@ -47,7 +47,7 @@ gilt Augenmaß, nicht die volle Strenge.
 
 - **Annahmen offenlegen, nicht stillschweigend treffen.** Was geprüft wurde und was
   nicht, gehört in die Aussage. „Ich habe X geprüft, Y nicht" statt einer Behauptung,
-  die nach Gewissheit klingt. **Alle acht bisherigen Fehler kamen so zustande.**
+  die nach Gewissheit klingt. **Alle neun bisherigen Fehler kamen so zustande.**
 - **Vollständig durchgehen, nicht bei einem Fund aufhören.** Wer ein kontrastschwaches
   Farbschema findet, rechnet alle durch. Erst die ganze Klasse prüfen, Nebenwirkungen
   mitdenken, dann als vollständige Liste melden.
@@ -73,7 +73,7 @@ gilt Augenmaß, nicht die volle Strenge.
 - **Selbst dokumentieren, selbst committen** — ohne Aufforderung.
 
 Jeder gefundene Shop-Fehler → `docs/bugs.md`. Jede eigene Fehleinschätzung → `K…`-Eintrag
-in `docs/entscheidungen.md`, **mit der Lehre daraus**. Bisher acht, alle lesenswert.
+in `docs/entscheidungen.md`, **mit der Lehre daraus**. Bisher neun, alle lesenswert.
 
 ## Architektur-Entscheidungen
 

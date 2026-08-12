@@ -19,7 +19,7 @@ aus dem Gespräch ins Repo, bevor der Chat geschlossen wird.
 | Datei | Inhalt |
 |---|---|
 | [`../CLAUDE.md`](../CLAUDE.md) | Kontext, Architektur, Sicherheitsregeln, Grundhaltung. Wird automatisch geladen |
-| [`entscheidungen.md`](entscheidungen.md) | Entscheidungen E1–E15 · **Korrekturen K1–K7** |
+| [`entscheidungen.md`](entscheidungen.md) | Entscheidungen E1–E18 · **Korrekturen K1–K9** |
 | [`bugs.md`](bugs.md) | **Fehlerregister** — offene Defekte, rechtliche Risiken, Behobenes |
 | [`theme-landkarte.md`](theme-landkarte.md) | **Wo im Theme was liegt** — vor jeder Änderung lesen |
 | [`todo.md`](todo.md) | Was ansteht, nach Zuständigkeit getrennt |
@@ -67,7 +67,7 @@ Als lesbare Seite: **[PetWorld Shop-Audit](https://claude.ai/code/artifact/eb800
 - **Produktseite**: Hinweis auf den Bilder-Leitfaden unter dem Titel,
   Vertrauens-Leiste unter dem Kaufen-Button
 - Kontrast-Audit aller Farbschemata, Sichtprüfung der Startseite
-- **Sechs eigene Fehleinschätzungen korrigiert und dokumentiert** (K1–K6)
+- **Neun eigene Fehleinschätzungen korrigiert und dokumentiert** (K1–K9) — jede mit der Lehre daraus
 
 ## Als Nächstes
 
