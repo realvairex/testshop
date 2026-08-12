@@ -1,0 +1,26 @@
+# Zugangsdaten — niemals committen
+.env
+.env.*
+!.env.example
+*.token
+shopify.theme.toml
+
+# Shopify CLI
+.shopify/
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Abhängigkeiten und Build-Artefakte
+node_modules/
+dist/
+.cache/
+
+# Theme-Exporte und Archive
+*.zip

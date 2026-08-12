@@ -15,7 +15,12 @@ Lies vollständig:
 - `docs/README.md` — Einstieg und Kurzfassung
 - `docs/todo.md` — was ansteht, aufgeteilt nach Zuständigkeit
 - `docs/entscheidungen.md` — getroffene Entscheidungen **und die Korrekturen K1…**
+- `docs/bugs.md` — **Fehlerregister**: offene Defekte, rechtliche Risiken, Behobenes
 - `docs/offene-fragen.md` — was fehlt und was blockiert
+
+**Vor jeder Theme-Änderung zusätzlich:** `docs/theme-landkarte.md` — welches Template
+welche Seite rendert, wo die Navigation herkommt, wo teeinblue hängt. Und die
+„Fabric-Eigenheiten" im Skill `petworld-design`.
 
 Bei Bedarf vertiefen: `zahlen.md`, `theme-audit.md`, `personalizer-audit.md`,
 `kontrast-audit.md`, `startseite-befunde.md`, `markennamen.md`,

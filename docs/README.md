@@ -19,7 +19,9 @@ aus dem Gespräch ins Repo, bevor der Chat geschlossen wird.
 | Datei | Inhalt |
 |---|---|
 | [`../CLAUDE.md`](../CLAUDE.md) | Kontext, Architektur, Sicherheitsregeln, Grundhaltung. Wird automatisch geladen |
-| [`entscheidungen.md`](entscheidungen.md) | Entscheidungen E1–E13 · **Korrekturen K1–K6** |
+| [`entscheidungen.md`](entscheidungen.md) | Entscheidungen E1–E15 · **Korrekturen K1–K7** |
+| [`bugs.md`](bugs.md) | **Fehlerregister** — offene Defekte, rechtliche Risiken, Behobenes |
+| [`theme-landkarte.md`](theme-landkarte.md) | **Wo im Theme was liegt** — vor jeder Änderung lesen |
 | [`todo.md`](todo.md) | Was ansteht, nach Zuständigkeit getrennt |
 | [`offene-fragen.md`](offene-fragen.md) | Was beantwortet ist, was fehlt, was blockiert |
 | [`zahlen.md`](zahlen.md) | Traffic, Conversion, Kosten, Versand, Werbung |
@@ -31,8 +33,11 @@ aus dem Gespräch ins Repo, bevor der Chat geschlossen wird.
 | [`personalizer-app-entscheidung.md`](personalizer-app-entscheidung.md) | teeinblue behalten oder Customily |
 | [`setup-lokal.md`](setup-lokal.md) | Lokale Live-Vorschau einrichten |
 | [`archiv-gempages/`](archiv-gempages/) | Gesicherte Inhalte vor dem GemPages-Ausbau |
+| [`artefakt/`](artefakt/) | Quelldatei der geteilten Audit-Seite samt Anleitung zum Aktualisieren |
 
 Als lesbare Seite: **[PetWorld Shop-Audit](https://claude.ai/code/artifact/eb8007e1-4516-470e-94ce-376c38daacdb)**
+— teilbar, wird gelesen, **muss bei Änderungen mit aktualisiert werden**
+(Anleitung in [`artefakt/README.md`](artefakt/README.md)).
 
 ## Der Stand in sechs Sätzen
 

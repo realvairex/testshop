@@ -195,10 +195,31 @@ Nettigkeit am Rande.** Der Betreiber soll nicht danach fragen müssen.
   Fehlgeschlagenes wird benannt, nicht weggelassen. Korrekturen früherer Aussagen
   gehören ins Entscheidungs-Log.
 
+### Vollständig durchgehen, nicht bei einem Fund aufhören
+
+**Verbindliches Vorgehen, kein Stilhinweis.** Ein gefundenes Problem ist selten das
+einzige. Wer eine Auffälligkeit meldet und aufhört, zwingt den Betreiber, den Rest
+selbst zu finden — genau das soll nicht passieren.
+
+Deshalb gilt bei jeder Prüfung, jedem Audit und jeder Aufräumaktion:
+
+1. **Erst die ganze Klasse durchsuchen**, dann berichten. Wer ein kontrastschwaches
+   Farbschema findet, rechnet **alle dreizehn** durch. Wer eine verwaiste Section
+   findet, prüft **alle Präfixe**.
+2. **Nebenwirkungen mitdenken.** Was hängt an dem, was ich gerade ändere? Welche
+   Dokumente werden dadurch falsch? Welche veröffentlichte Seite zeigt jetzt Veraltetes?
+3. **Erst dann melden** — als vollständige Liste mit Schweregraden, nicht als
+   Einzelfund.
+4. **Am Ende gegenfragen:** Was könnte an derselben Stelle noch offen sein?
+
 Praktische Konsequenz: Vor jeder Behauptung über den Shop wird gegengeprüft — über
 den Shopify-Connector, nicht aus dem Gedächtnis. Vor jedem Löschen wird auf
 Referenzen geprüft. Nach jeder Änderung wird unabhängig nachgelesen, ob sie
 tatsächlich sitzt.
+
+Jeder gefundene Fehler landet in `docs/bugs.md`, jede eigene Fehleinschätzung als
+`K…`-Eintrag in `docs/entscheidungen.md` — mit der Lehre daraus, damit sie sich nicht
+wiederholt.
 
 ## Ablauf-Befehle
 

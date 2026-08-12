@@ -1,0 +1,635 @@
+<title>PetWorld — Shop-Audit</title>
+<style>
+  /* ---------- Tokens: vollständige helle Palette ---------- */
+  :root {
+    --paper:        #f6f4f0;
+    --surface:      #fffefc;
+    --surface-alt:  #efece6;
+    --ink:          #17211f;
+    --ink-soft:     #5a6663;
+    --ink-faint:    #8b9491;
+    --rule:         #ded8ce;
+    --rule-strong:  #c9c2b6;
+
+    --petrol:       #35726e;
+    --petrol-bright:#76b2ae;
+    --petrol-wash:  #e4efee;
+
+    --sev-crit:     #a8442c;
+    --sev-crit-bg:  #f6e6e0;
+    --sev-high:     #8a6414;
+    --sev-high-bg:  #f5ecd8;
+    --sev-mid:      #35726e;
+    --sev-mid-bg:   #e2eeed;
+    --sev-low:      #6d726b;
+    --sev-low-bg:   #eceae4;
+
+    --shadow:       0 1px 2px rgba(23,33,31,.05), 0 8px 24px -12px rgba(23,33,31,.16);
+
+    --display: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:        #101817;
+      --surface:      #16211f;
+      --surface-alt:  #1c2826;
+      --ink:          #e7e4dd;
+      --ink-soft:     #a3ada9;
+      --ink-faint:    #78827f;
+      --rule:         #2a3634;
+      --rule-strong:  #3b4846;
+
+      --petrol:       #86c3be;
+      --petrol-bright:#76b2ae;
+      --petrol-wash:  #1b2b29;
+
+      --sev-crit:     #e29179;
+      --sev-crit-bg:  #33201a;
+      --sev-high:     #d6b05c;
+      --sev-high-bg:  #2e2716;
+      --sev-mid:      #86c3be;
+      --sev-mid-bg:   #1b2b29;
+      --sev-low:      #9aa197;
+      --sev-low-bg:   #232825;
+
+      --shadow:       0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:        #101817;
+    --surface:      #16211f;
+    --surface-alt:  #1c2826;
+    --ink:          #e7e4dd;
+    --ink-soft:     #a3ada9;
+    --ink-faint:    #78827f;
+    --rule:         #2a3634;
+    --rule-strong:  #3b4846;
+
+    --petrol:       #86c3be;
+    --petrol-bright:#76b2ae;
+    --petrol-wash:  #1b2b29;
+
+    --sev-crit:     #e29179;
+    --sev-crit-bg:  #33201a;
+    --sev-high:     #d6b05c;
+    --sev-high-bg:  #2e2716;
+    --sev-mid:      #86c3be;
+    --sev-mid-bg:   #1b2b29;
+    --sev-low:      #9aa197;
+    --sev-low-bg:   #232825;
+
+    --shadow:       0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 24px 96px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 780px; margin: 0 auto; }
+
+  /* ---------- Kopf ---------- */
+  header.masthead {
+    padding: 72px 0 40px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--petrol);
+    margin: 0;
+  }
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(38px, 6.5vw, 60px);
+    line-height: 1.04;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .standfirst {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  /* ---------- Kennzahlen ---------- */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 40px 0 0;
+  }
+  .fact { background: var(--surface); padding: 18px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .fact dt { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+  .fact dd { margin: 0; font-family: var(--display); font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .fact dd small { display: block; font-family: var(--body); font-size: 13px; color: var(--ink-soft); margin-top: 3px; line-height: 1.4; }
+
+  /* ---------- Abschnitte ---------- */
+  section { padding-top: 64px; }
+  h2 {
+    font-family: var(--display);
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  .section-note { color: var(--ink-soft); margin: 0 0 28px; max-width: 62ch; }
+  h3 { font-size: 18px; font-weight: 600; margin: 0; line-height: 1.35; text-wrap: balance; }
+  p { margin: 0 0 14px; max-width: 66ch; }
+  p:last-child { margin-bottom: 0; }
+  a { color: var(--petrol); text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--petrol); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 650; }
+  code {
+    font-family: var(--mono);
+    font-size: .86em;
+    background: var(--surface-alt);
+    border: 1px solid var(--rule);
+    padding: 1px 5px;
+    border-radius: 3px;
+    word-break: break-word;
+  }
+
+  /* ---------- Befund-Karten ---------- */
+  .findings { display: flex; flex-direction: column; gap: 14px; }
+  .finding {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--bar, var(--rule-strong));
+    box-shadow: var(--shadow);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .finding.crit { --bar: var(--sev-crit); }
+  .finding.high { --bar: var(--sev-high); }
+  .finding.mid  { --bar: var(--sev-mid); }
+  .finding.low  { --bar: var(--sev-low); }
+
+  .finding-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border: 1px solid var(--rule-strong);
+    padding: 2px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+  .chip.crit { color: var(--sev-crit); background: var(--sev-crit-bg); }
+  .chip.high { color: var(--sev-high); background: var(--sev-high-bg); }
+  .chip.mid  { color: var(--sev-mid);  background: var(--sev-mid-bg); }
+  .chip.low  { color: var(--sev-low);  background: var(--sev-low-bg); }
+  .fix {
+    border-top: 1px dashed var(--rule-strong);
+    padding-top: 12px;
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+  .fix b { color: var(--ink); font-weight: 650; }
+
+  /* ---------- Tabellen ---------- */
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 15.5px; min-width: 460px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: var(--surface-alt);
+    font-weight: 500;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num { font-variant-numeric: tabular-nums; }
+
+  /* ---------- Codeblock ---------- */
+  pre {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.75;
+    background: var(--surface-alt);
+    border: 1px solid var(--rule);
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- Phasen ---------- */
+  ol.phases { list-style: none; counter-reset: ph; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+  ol.phases li {
+    counter-increment: ph;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+  }
+  ol.phases li:last-child { border-bottom: 1px solid var(--rule); }
+  ol.phases li::before {
+    content: counter(ph);
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1;
+    color: var(--petrol);
+    font-variant-numeric: tabular-nums;
+  }
+  .phase-body { display: flex; flex-direction: column; gap: 8px; }
+  .phase-meta { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  ul.tight { margin: 0; padding-left: 19px; }
+  ul.tight li { margin-bottom: 5px; }
+  ul.tight li:last-child { margin-bottom: 0; }
+
+  /* ---------- Callout ---------- */
+  .callout {
+    background: var(--petrol-wash);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--petrol-bright);
+    padding: 18px 22px;
+    margin: 0 0 24px;
+  }
+  .callout p { max-width: none; }
+
+  /* ---------- Fragen ---------- */
+  .questions { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .q { background: var(--surface); padding: 14px 18px; display: flex; gap: 14px; align-items: baseline; }
+  .q .qn { font-family: var(--mono); font-size: 12px; color: var(--petrol); flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+  .q .qt { flex: 1; }
+  .q .qt em { display: block; font-style: normal; font-size: 14px; color: var(--ink-faint); margin-top: 2px; }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; padding: 0 18px 64px; }
+    header.masthead { padding-top: 48px; }
+    ol.phases li { grid-template-columns: 38px 1fr; gap: 14px; }
+    ol.phases li::before { font-size: 26px; }
+    .chip { margin-left: 0; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Shop-Audit · 11. August 2026</p>
+    <h1>PetWorld: Was den Shop bremst</h1>
+    <p class="standfirst">Auswertung des Theme-Exports und der Live-Produktseite. Das Basis-Theme ist gut — die Probleme liegen in dem, was darübergestapelt wurde, und im Personalisierungs-Ablauf.</p>
+  </header>
+
+  <dl class="facts">
+    <div class="fact"><dt>Conversion</dt><dd class="num">0,07 %<small>Median liegt bei 1,4 %</small></dd></div>
+    <div class="fact"><dt>Sessions / Jahr</dt><dd class="num">11.072<small>aktuell 26 im Monat</small></dd></div>
+    <div class="fact"><dt>Bestellungen</dt><dd class="num">16<small>davon 8 Familie und Test</small></dd></div>
+    <div class="fact"><dt>Pflichtfelder</dt><dd class="num">9<small>vor dem Kauf</small></dd></div>
+    <div class="fact"><dt>Farbfelder</dt><dd class="num">40+<small>im Personalizer</small></dd></div>
+  </dl>
+
+  <section>
+    <h2>Die Kurzfassung</h2>
+    <p class="section-note">Drei Dinge kosten Umsatz, in dieser Reihenfolge.</p>
+    <div class="callout">
+      <p><strong>1. Der Personalizer überfordert.</strong> Neun Pflichtentscheidungen und über 40 Farbfelder für ein 20-€-Geschenkprodukt. Der Foto-Upload — der emotionale Kern — steht ganz unten.</p>
+      <p><strong>2. Drei ungenutzte Page-Builder laden auf jeder Seite mit.</strong> GemPages, PageFly und Shogun werden auf keiner Live-Seite verwendet, blockieren aber Bandbreite und Hauptthread. Sie stehen dem Personalizer im Weg.</p>
+      <p><strong>3. Die Marke hat kein System.</strong> Eine einzige Schriftfamilie für alle Rollen, Überschriften absichtlich ausgegraut, 13 Farbschemata ohne erkennbare Ordnung.</p>
+    </div>
+    <p><strong>Korrektur vom 12.08.2026:</strong> Eine frühere Fassung dieser Seite warnte, bei 19,95 € bleibe zu wenig Deckungsbeitrag für Werbung. Das beruhte auf geschätzten Kosten und war zu pessimistisch. Die echten Einkaufspreise aus dem Shop sagen etwas anderes.</p>
+
+    <div class="scroll" style="margin-top:18px">
+      <table>
+        <thead><tr><th>Produkt</th><th>Verkauf</th><th>Einkauf</th><th>Deckungsbeitrag</th></tr></thead>
+        <tbody>
+          <tr><td>Poster 20×30</td><td class="num">19,95 €</td><td class="num">3,32 €</td><td class="num"><strong>16,63 €</strong> (83 %)</td></tr>
+          <tr><td>Poster 40×60</td><td class="num">29,95 €</td><td class="num">6,89 €</td><td class="num">23,06 €</td></tr>
+          <tr><td>Rahmen schwarz 40×60</td><td class="num">64,95 €</td><td class="num">24,35 €</td><td class="num"><strong>40,60 €</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:18px">Die Marge trägt also. <strong>Ein gerahmtes 40×60 bringt das 2,4-fache des Basis-Posters</strong> — und genau dieser Rahmen wird auf der Produktseite als nackter Textbutton ohne Bild und ohne Preis verschenkt. Er entscheidet darüber, ob bezahlte Werbung je rechenbar wird.</p>
+
+    <p>Der Versand des Druckpartners ist in diesen Einkaufspreisen <em>nicht</em> enthalten. Bei Bestellungen unter 50 € deckt die Versandgebühr des Kunden ihn weitgehend, darüber trägt ihn der Shop.</p>
+  </section>
+
+  <section>
+    <h2>Was die Zahlen zeigen</h2>
+    <p class="section-note">Abgerufen über den Shopify-Connector am 12.08.2026.</p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Monat</th><th>Sessions</th><th>Bestellungen</th></tr></thead>
+        <tbody>
+          <tr><td>Dez 2025</td><td class="num">3.306</td><td class="num">5</td></tr>
+          <tr><td>Jan 2026</td><td class="num">3.681</td><td class="num">8</td></tr>
+          <tr><td>Feb 2026</td><td class="num">2.688</td><td class="num">1</td></tr>
+          <tr><td>Mär–Jul 2026</td><td class="num">980</td><td class="num">1</td></tr>
+          <tr><td>Aug 2026</td><td class="num">26</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:18px"><strong>87 % des Jahres-Traffics fielen in drei Monate.</strong> In dieser Zeit lief Facebook-Werbung. Seit März wurde nichts mehr gemacht — aus Zeitmangel, nicht wegen eines Problems.</p>
+
+    <div class="callout">
+      <p><strong>Die Werbung hat funktioniert. Die Seite hat die Besucher nicht abgeholt.</strong></p>
+      <p>9.675 Besucher erzeugten 14 Bestellungen — rund <strong>690 Besucher pro Bestellung</strong>. Von 16 Bestellungen insgesamt sind acht Familie und Test, die echte Conversion liegt also bei etwa <strong>0,07 %</strong>.</p>
+      <p>Daraus folgt die Reihenfolge: <strong>erst die Conversion reparieren, dann Traffic einkaufen.</strong> Andersherum verbrennt es Geld — das ist bereits einmal passiert.</p>
+    </div>
+
+    <p>78 % des Traffics kam über Social Media, fast ausschließlich mobil. Über die Suche kamen <strong>98 Sessions im gesamten Jahr</strong> — SEO existiert praktisch nicht.</p>
+  </section>
+
+  <section>
+    <h2>Befunde im Personalizer</h2>
+    <p class="section-note">Grundlage: Screenshot der Live-Produktseite <strong>PLAYDOG</strong>. Der Kunde durchläuft aktuell diese Reihenfolge.</p>
+
+    <pre>★★★★☆ (89)
+PLAYDOG
+€19,95   €24,95   SALE 20%
+
+VERFÜGBARE PRODUKTE   Poster ohne Rahmen · Schwarz · Weiß · Eiche
+GRÖSSEN               20x30 · 40x60 · 50x75
+
+Primärfarbe *         2 Felder
+Name deines Hundes *  Textfeld
+Sekundärfarbe *       20 Farbfelder
+Datum *               Textfeld — Platzhalter "AUGUST 2025"
+Hintergrund *         20 Farbfelder
+Bild deines Hundes *  Upload — ganz unten
+
+[ ] Haftungs-Checkbox
+    IN DEN WARENKORB</pre>
+
+    <div class="findings">
+
+      <article class="finding crit">
+        <div class="finding-head"><span class="tag">Befund A</span><h3>Neun Pflichtentscheidungen</h3><span class="chip crit">kritisch</span></div>
+        <p>Jedes Feld ist mit <code>*</code> als Pflicht markiert — inklusive zweier Farbwahlen aus je 20 Feldern. Das ist Konfigurator-Logik für ein Produkt, das als Impulsgeschenk gekauft wird. Wer ein Poster verschenken will, möchte nicht Grafikdesigner werden.</p>
+        <p class="fix"><b>Zu tun:</b> Nur Foto und Name als Pflicht. Alle Farben sinnvoll vorbelegen und hinter „Design anpassen“ legen.</p>
+      </article>
+
+      <article class="finding crit">
+        <div class="finding-head"><span class="tag">Befund B</span><h3>Der Foto-Upload steht an letzter Stelle</h3><span class="chip crit">kritisch</span></div>
+        <p>Das Hochladen des Hundefotos ist der Moment, in dem aus einem generischen Poster <em>das eigene Tier</em> wird. Aktuell kommt er nach sieben anderen Entscheidungen — der Wow-Effekt passiert also erst, wenn die Arbeit schon erledigt ist. Falls der Kunde so weit kommt.</p>
+        <p class="fix"><b>Zu tun:</b> Upload an die erste Stelle. Foto rein → Vorschau mit dem eigenen Hund → dann erst alles andere. Die wirkungsvollste Einzeländerung.</p>
+      </article>
+
+      <article class="finding crit">
+        <div class="finding-head"><span class="tag">Befund C</span><h3>Keine Vorschau neben den Bedienelementen</h3><span class="chip crit">kritisch</span></div>
+        <p>Im gesamten Formularbereich ist kein Vorschaubild sichtbar. Der Kunde wählt aus 40 Farben, ohne das Ergebnis zu sehen — genau das Verkaufsversprechen der Personalisierung bleibt unsichtbar.</p>
+        <p class="fix"><b>Zu tun:</b> Sticky-Vorschau, die beim Scrollen mitläuft und jede Änderung sofort zeigt. <em>Noch zu prüfen, ob weiter oben eine Vorschau existiert.</em></p>
+      </article>
+
+      <article class="finding high">
+        <div class="finding-head"><span class="tag">Befund D</span><h3>Haftungstext direkt über dem Kaufen-Button</h3><span class="chip high">hoch</span></div>
+        <p>„… nachträgliche Änderungen, Korrekturen oder Rückgaben aufgrund fehlerhafter Eingaben ausgeschlossen sind.“ Rechtlich nachvollziehbar (§18 Abs. 1 Z 3 FAGG), psychologisch eine kalte Dusche im Moment der höchsten Kaufbereitschaft.</p>
+        <p class="fix"><b>Zu tun:</b> Aufklärungspflicht erfüllen, aber positiv rahmen — Design-Bestätigung mit Vorschau plus „Unser Team prüft jedes Design vor dem Druck“.</p>
+      </article>
+
+      <article class="finding high">
+        <div class="finding-head"><span class="tag">Befund E</span><h3>Der Rahmen-Upsell wird verschenkt</h3><span class="chip high">hoch</span></div>
+        <p>„Rahmen Schwarz · Weiß · Eiche“ als nackte Textbuttons, ohne Bild und ohne Preisangabe. Der Rahmen ist der stärkste Hebel für den Bestellwert — aktuell muss der Kunde raten, wie er aussieht und was er kostet.</p>
+        <p class="fix"><b>Zu tun:</b> Miniatur je Rahmen, Preisaufschlag sichtbar, eine Option als Empfehlung markieren.</p>
+      </article>
+
+      <article class="finding mid">
+        <div class="finding-head"><span class="tag">Befund F</span><h3>Beschriftungen aus Systemsicht</h3><span class="chip mid">mittel</span></div>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Aktuell</th><th>Problem</th><th>Vorschlag</th></tr></thead>
+            <tbody>
+              <tr><td>VERFÜGBARE PRODUKTE</td><td>Meint eigentlich den Rahmen</td><td>Rahmen wählen</td></tr>
+              <tr><td>Primärfarbe / Sekundärfarbe</td><td>Unklar, was gefärbt wird</td><td>Schriftfarbe / Akzentfarbe</td></tr>
+              <tr><td>Datum</td><td>Unklar, wofür</td><td>Datum auf dem Poster (optional)</td></tr>
+              <tr><td>Platzhalter „AUGUST 2025“</td><td>Veraltet — aktuell ist 2026</td><td>Dynamisch oder neutral</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="finding mid">
+        <div class="finding-head"><span class="tag">Befund G</span><h3>89 Bewertungen bei 4,5 Sternen — unsichtbar</h3><span class="chip mid">mittel</span></div>
+        <p>Echtes Social Proof, gerendert als kleine graue Zeile über dem Titel. Nicht anklickbar, keine Kundenfotos, kein Bewertungsblock weiter unten. Bei personalisierten Produkten sind Fotos anderer Kunden das stärkste Kaufargument.</p>
+      </article>
+
+      <article class="finding low">
+        <div class="finding-head"><span class="tag">Befund I</span><h3>Pfoten-Muster hinter dem Formular</h3><span class="chip low">niedrig</span></div>
+        <p>Große graue Pfotenabdrücke senken die Lesbarkeit und wirken günstig — gegenläufig zum Ziel, das Produkt hochwertiger erscheinen zu lassen.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Befunde im Theme</h2>
+    <p class="section-note">Fabric 3.1.0 ist eine gute Basis. Modern, block-basiert, schnell. Angefasst wurde der Code nie von Hand — überlagert wurde er dafür massiv.</p>
+
+    <div class="findings">
+
+      <article class="finding high">
+        <div class="finding-head"><span class="tag">Befund 2</span><h3>Drei Page-Builder gleichzeitig aktiv</h3><span class="chip high">hoch</span></div>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>App</th><th>Status</th><th>Im Theme</th><th>Auf Live-Seiten</th></tr></thead>
+            <tbody>
+              <tr><td>PageFly</td><td>App-Embed, ungenutzt</td><td>2 Dateien</td><td>✅ entfernt</td></tr>
+              <tr><td>Shogun</td><td>lud über <code>theme.liquid</code> auf jeder Seite</td><td>15 Dateien</td><td>✅ entfernt</td></tr>
+              <tr><td>Section Star / Store</td><td>ungenutzt</td><td>4 Sections</td><td>✅ entfernt</td></tr>
+              <tr><td>Gelato</td><td>0 Produktvarianten</td><td>3 Versandprofile</td><td>✅ entfernt</td></tr>
+              <tr><td><strong>GemPages</strong></td><td>60 Sections, 68 KB CSS</td><td>5 veröffentlichte Seiten hängen daran</td><td>⏳ erst Weiterleitungen</td></tr>
+              <tr><td>smind / Sections Pro</td><td>genutzt auf der Startseite</td><td><code>sp-*</code> Sections</td><td>bleibt</td></tr>
+              <tr><td>teeinblue</td><td>App-Embed</td><td>Kern des Geschäfts</td><td>bleibt</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fix"><b>Stand:</b> Vier Apps sind entfernt, ihre Theme-Reste ebenfalls. <b>GemPages bleibt vorerst</b> — fünf veröffentlichte Seiten nutzen seine Templates. Erst 301-Weiterleitungen auf die nativen Fassungen setzen, dann deinstallieren.</p>
+      </article>
+
+      <article class="finding mid">
+        <div class="finding-head"><span class="tag">Befund 1</span><h3>Preis und Varianten nur aus teeinblue</h3><span class="chip mid">mittel</span></div>
+        <p>Die Produktseite enthält weder einen <code>price</code>- noch einen <code>variant-picker</code>-Block. Beide existieren im Theme, sind aber nicht platziert — teeinblue rendert sie selbst. Beides erscheint also erst nach JavaScript-Ausführung und fehlt im server-gerenderten HTML.</p>
+        <p class="fix"><b>Zu tun:</b> Prüfen, ob teeinblue eine App-Block-Einbindung statt des Embeds anbietet. Dann ist die Platzierung im Theme-Editor steuerbar. Relevant für Merchant Center und Preis-Snippets in der Suche.</p>
+      </article>
+
+      <article class="finding mid">
+        <div class="finding-head"><span class="tag">Befund 4</span><h3>Kein Typo-System, ausgegraute Überschriften</h3><span class="chip mid">mittel</span></div>
+        <pre>type_body_font        asap_n5     type_heading_font   asap_n6
+type_subheading_font  asap_n5     type_accent_font    asap_n4
+
+foreground_heading    #030302c2   ← Schwarz mit 76 % Deckkraft</pre>
+        <p>Eine einzige Schriftfamilie für alle vier Rollen, unterschieden nur durch Strichstärke. Das ist der Hauptgrund, warum der Shop generisch wirkt: keine Hierarchie, nur unterschiedlich fettes Grau. Dazu werden Überschriften absichtlich ausgegraut — das kostet Kontrast und ist ein Accessibility-Problem.</p>
+        <p class="fix"><b>Zu tun:</b> Zweite Schriftfamilie für Headlines, Deckkraft auf 100 %, die 13 Farbschemata auf 4–5 sinnvolle reduzieren.</p>
+      </article>
+
+      <article class="finding low">
+        <div class="finding-head"><span class="tag">Befund 3</span><h3>Karteileichen</h3><span class="chip low">niedrig</span></div>
+        <p>31 von 56 Templates sind Page-Builder-Backups. 2,4 MB allein an ungenutzten Section-Dateien. Nebenbei: <code>sp-trust-badges</code> und <code>sp-faq</code> liegen fertig im Theme, sind aber auf keiner Seite platziert — Trust-Elemente, die ungenutzt herumliegen.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>teeinblue: Was geht, was nicht</h2>
+    <p class="section-note">Recherchiert am 11.08.2026. Die Doku-Seiten selbst waren nicht direkt abrufbar, die Belege stammen aus den Suchergebnissen der teeinblue-Supportartikel.</p>
+
+    <p><strong>Bestätigt:</strong> teeinblue unterstützt bedingte Logik. Ein Layer und seine Personalisierungs-Option erscheinen erst, wenn ein anderer Layer eine Bedingung erfüllt. In der Doku steht sogar genau dieses Muster als Beispiel: erst Haarfarbe wählen, dann erscheint die Frisur-Option.</p>
+
+    <p><strong>Nicht bestätigt:</strong> Ein echter Wizard mit Schritt 1/2/3, Fortschrittsanzeige und Weiter-Button. Bedingte Logik ist nicht dasselbe.</p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th></th><th>Bedingte Logik</th><th>Echter Wizard</th></tr></thead>
+        <tbody>
+          <tr><td>Felder nacheinander einblenden</td><td>ja</td><td>ja</td></tr>
+          <tr><td>Vorherige Schritte bleiben sichtbar</td><td>ja — Liste wächst</td><td>nein — ein Schritt pro Ansicht</td></tr>
+          <tr><td>Fortschrittsanzeige</td><td>nein</td><td>ja</td></tr>
+          <tr><td>Zurück-Button</td><td>nein</td><td>ja</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:18px">Offen bleibt, ob ein <strong>Bild-Upload</strong> als Bedingung taugt — also „zeige Primärfarbe erst, wenn ein Foto hochgeladen wurde“. In allen dokumentierten Beispielen sind die Auslöser Auswahl-Optionen, keine Uploads. Genau das wäre aber Schritt 1.</p>
+
+    <div class="callout">
+      <p><strong>Empfehlung:</strong> Erst die native Bedingungskette bauen — jede Option bekommt die vorherige als Bedingung. Das bringt 80 % des Effekts bei null Risiko und überlebt App-Updates. Falls danach das Fortschrittsgefühl fehlt, legen wir eine Wizard-Schicht im Theme darüber. Dann aber auf einem Flow, der auch ohne sie funktioniert.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bereits erledigt</h2>
+    <p class="section-note">Stand 12. August 2026.</p>
+    <ul class="tight" style="font-size:16px">
+      <li><strong>Shogun, PageFly, Gelato, Section Star und Section Store deinstalliert</strong> — samt aller Theme-Reste. Shogun lud über <code>theme.liquid</code> auf jeder Seite mit, obwohl die App längst weg war.</li>
+      <li><strong>Zwei gefährliche Rabattcodes deaktiviert.</strong> <code>Danke</code> gab 40 € Rabatt — unbegrenzt oft, ohne Kundenlimit, ohne Ablaufdatum, und als gewöhnliches deutsches Wort leicht zu erraten. Bei Produkten von 19,95 bis 64,95 € praktisch Gratisbestellungen.</li>
+      <li><strong>Standard-Seitenvorlage bereinigt.</strong> Der Über-uns-Text lag im Template für <em>jede</em> Seite ohne eigene Vorlage und wäre auf jeder neuen Seite erschienen.</li>
+      <li><strong>Produktseite:</strong> Hinweis auf den Bilder-Leitfaden unter dem Titel, Vertrauens-Leiste unter dem Kaufen-Button mit Lieferzeit, Versandschwelle, Herkunft und Einzelfertigung.</li>
+      <li><strong>Alle Farbschemata nach WCAG durchgerechnet.</strong> Ergebnis: Der Header erreicht 2,2:1 statt der geforderten 4,5:1 — auf Screenshots sichtbar bestätigt.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Der Plan</h2>
+    <p class="section-note">Die Reihenfolge ist nicht beliebig — jede Phase macht die nächste einfacher.</p>
+
+    <ol class="phases">
+      <li>
+        <div class="phase-body">
+          <span class="phase-meta">Fundament · startklar</span>
+          <h3>Aufräumen und Design-Tokens</h3>
+          <ul class="tight">
+            <li>2,4 MB tote Page-Builder-Dateien und 31 unbenutzte Templates entfernen</li>
+            <li>Token-System aufsetzen: Typo-Skala, Farbrollen, 8px-Raster</li>
+            <li>Heading-Kontrast auf 100 % korrigieren</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="phase-body">
+          <span class="phase-meta">Corporate Identity · braucht Input</span>
+          <h3>Der Marke ein System geben</h3>
+          <ul class="tight">
+            <li>Zweite Schriftfamilie für Headlines</li>
+            <li>13 Farbschemata auf 4–5 reduzieren und schärfen</li>
+            <li>Bildsprache, Tonalität, Button- und Badge-Logik vereinheitlichen</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="phase-body">
+          <span class="phase-meta">Personalizer · im teeinblue-Admin</span>
+          <h3>Den Ablauf entschlacken</h3>
+          <ul class="tight">
+            <li>Bedingungsketten aufbauen, Upload nach vorn</li>
+            <li>Pflichtfelder auf zwei reduzieren, Rest vorbelegen</li>
+            <li>Beschriftungen in Kundensprache, Rahmen-Upsell mit Bild und Preis</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="phase-body">
+          <span class="phase-meta">Seiten</span>
+          <h3>Produktseite, Startseite, Warenkorb polieren</h3>
+          <ul class="tight">
+            <li>Zwei Heroes direkt hintereinander auflösen</li>
+            <li>Trust-Bar, Lieferzeit, Bewertungsblock mit Kundenfotos</li>
+            <li>Bundle-Staffel für mehrere Poster</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="phase-body">
+          <span class="phase-meta">Sichtbarkeit</span>
+          <h3>SEO und Merchant Center</h3>
+          <ul class="tight">
+            <li>hreflang de-AT / de-DE, Product-Schema, Core Web Vitals</li>
+            <li>Content: Foto-Anleitung, Geschenk-Ratgeber, Memorial-Thema</li>
+            <li>Shopping-Feed und kostenlose Listings</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Was noch fehlt</h2>
+    <p class="section-note">Ohne diese Angaben arbeiten wir an Vermutungen statt an Fakten.</p>
+    <div class="questions">
+      <div class="q"><span class="qn">6–7</span><span class="qt">Sessions pro Monat, Conversion Rate, Traffic-Quellen<em>Aus Shopify Analytics, CSV-Export reicht</em></span></div>
+      <div class="q"><span class="qn">11</span><span class="qt">Wie viele öffnen den Personalizer, wie viele schließen ihn ab<em>Die wichtigste einzelne Zahl im ganzen Shop</em></span></div>
+      <div class="q"><span class="qn">13</span><span class="qt">Was kostet ein Poster wirklich — Druck, Versand, Gebühren<em>Entscheidet, ob Werbung überhaupt rechenbar ist</em></span></div>
+      <div class="q"><span class="qn">14</span><span class="qt">Bleibt der Preis bei 19,95 €?<em>Eine Entscheidung, keine Datenfrage</em></span></div>
+      <div class="q"><span class="qn">19</span><span class="qt">Bleiben DOGUE, PLAYDOG, FURBES — oder eigene Namen?<em>Markenrechtlich riskant und für SEO nicht nutzbar</em></span></div>
+      <div class="q"><span class="qn">21</span><span class="qt">Zwei bis drei Shops, deren Look gefällt — und einer, der nicht gefällt<em>Für die Schrift- und Farbentscheidung in Phase 2</em></span></div>
+    </div>
+  </section>
+
+  <footer>
+    Erstellt aus dem Theme-Export <code>petworldatbackup110826</code> und einem Screenshot der Live-Produktseite. Alle Dateien und ausführlichen Notizen liegen im Repo unter <code>docs/</code>.
+  </footer>
+
+</div>

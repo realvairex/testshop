@@ -32,11 +32,17 @@ noch in keinem Dokument. Achte besonders auf:
 |---|---|
 | Kontext, Architektur, Regeln, Grundhaltung | `CLAUDE.md` |
 | Entscheidungen (`E…`) und Korrekturen (`K…`) | `docs/entscheidungen.md` |
+| **Gefundene Fehler, rechtliche Risiken, Behobenes** | **`docs/bugs.md`** |
 | Zahlen, Kosten, Traffic, Versand, Fulfillment | `docs/zahlen.md` |
 | Was ansteht, nach Zuständigkeit getrennt | `docs/todo.md` |
 | Was fehlt und was blockiert | `docs/offene-fragen.md` |
 | Theme-, Personalizer-, Kontrast-, Startseiten-Befunde | jeweiliges Audit-Dokument |
-| Gestaltungsregeln | `.claude/skills/petworld-design/SKILL.md` |
+| Wo im Theme was liegt | `docs/theme-landkarte.md` |
+| Gestaltungsregeln, technische Fabric-Eigenheiten | `.claude/skills/petworld-design/SKILL.md` |
+
+**Jeder in der Sitzung gefundene Fehler gehört ins Register** — mit Schweregrad,
+Fundort und Lösungsweg. Auch die, die noch niemand beheben wollte. Behobenes wird
+abgehakt, nicht gelöscht.
 
 **Regeln beim Schreiben:**
 
@@ -47,6 +53,22 @@ noch in keinem Dokument. Achte besonders auf:
 - Überholte Abschnitte **kennzeichnen statt löschen**, damit die Entwicklung
   nachvollziehbar bleibt.
 - Datum dazuschreiben.
+
+## 2b. Selbst prüfen, was sonst noch fehlt
+
+Nicht bei einem Fund stehenbleiben. Geh die Liste durch und ergänze, was fehlt:
+
+- Ist jedes neue Dokument in `docs/README.md` verlinkt?
+- Verweisen `start-petworld` und `ende-petworld` auf alle relevanten Dokumente?
+- Steht in `CLAUDE.md` noch etwas, das inzwischen überholt ist?
+- Sind Zahlen in mehreren Dokumenten **widerspruchsfrei**?
+- Wurde ein **Artefakt oder eine geteilte Seite** veröffentlicht, die inzwischen
+  falsche Angaben enthält? Dann aktualisieren — sie ist teilbar und wird gelesen.
+- Gibt es technische Erkenntnisse aus dem Bauen, die sonst jede Sitzung neu
+  herausfinden müsste?
+- Fehlt Infrastruktur — `.gitignore`, Beispieldateien, Anleitungen?
+
+**Der Betreiber soll nicht darauf hinweisen müssen.**
 
 ## 3. TODO aufräumen
 
