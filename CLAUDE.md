@@ -37,13 +37,18 @@ Bisher wurde **kein Theme-Code verändert**. Alles bis hier ist Analyse.
 
 | App | Status | Bewertung |
 |---|---|---|
-| teeinblue Product Personalizer | aktiv, App-**Embed** | Kern des Geschäfts. Fulfillment-Workflow gilt als problematisch. |
-| smind / Sections Pro | aktiv | wird genutzt (`sp-*` Sections) |
-| Opus Cart Upsell | aktiv | wird genutzt |
-| GemPages | aktiv | ⚠️ **5 veröffentlichte Seiten hängen daran** — erst nativ nachbauen, dann deinstallieren |
-| PageFly | aktiv | ✅ von keinem Objekt referenziert — sofort deinstallierbar |
-| Shogun | Reste im Theme | ✅ von keinem Objekt referenziert — sofort deinstallierbar |
-| Dakaas Store Effects | deaktiviert | — |
+| teeinblue Product Personalizer | aktiv, App-**Embed** | Kern des Geschäfts. Fulfillment-Workflow gilt als veraltet und umständlich. |
+| merchOne | aktiv | **Einziger POD-Partner.** Versand nicht im Einkaufspreis enthalten |
+| smind / Sections Pro | aktiv | wird genutzt (`sp-*` Sections auf der Startseite) |
+| Klaviyo | aktiv | **unterbewertet** — Warenkorbabbruch-Mails sind der billigste Hebel |
+| GemPages | aktiv | ⚠️ **Erst Weiterleitungen setzen, dann deinstallieren.** 5 veröffentlichte Seiten nutzen `gp-template`-Suffixe |
+| PageFly, Shogun, Gelato, Section Star, Section Store, Dakaas | **deinstalliert** | 12.08.2026, Theme-Reste entfernt |
+| Opus Cart Upsell | nicht mehr installiert | App-Embed-Eintrag liegt noch in `settings_data.json` |
+
+**Weiterhin ungeklärt:** Stack ($9,99/Monat), TinySEO, AddressHero, Vidify, Collective,
+Messaging, Predis, CWILL Popup Email, Essential Announcer, Customix Personalizer
+(zweiter Personalizer!). Dazu **zwei** Warenkorb-Apps parallel: EGO Cart Upsell
+($12,99) und AMP Slide Cart.
 
 ## Getroffene Architektur-Entscheidungen
 
@@ -122,17 +127,23 @@ Ausführlich in `docs/theme-audit.md` und `docs/personalizer-audit.md`.
 | Traffic-Quelle | 78 % Social, fast nur mobil. Suche: 98 Sessions im Jahr |
 | Fulfillment | **13 von 16 Bestellungen nicht vollständig ausgeliefert** |
 
-**Drei Probleme, in dieser Reihenfolge:**
+Von den 16 Bestellungen sind **acht Familie oder Test** (alle mit Nachnamen Kases,
+vom Betreiber bestätigt). Die echte Conversion liegt damit bei etwa **0,07 %**.
 
-1. **Fulfillment.** Bezahlte Bestellungen aus Dezember 2025 stehen weiterhin auf
-   `IN_PROGRESS`. Entweder nie geliefert oder der POD-Partner meldet den Status nicht
-   zurück. Dringend, unabhängig von allem anderen.
-2. **Conversion 0,14 %.** Die Personalizer-Diagnose ist damit belegt: 9.675 Besucher in
-   drei Monaten haben 14 Bestellungen erzeugt.
-3. **Traffic.** Aktuell praktisch keiner.
+**Zwei Probleme, in dieser Reihenfolge:**
+
+1. **Conversion.** Die Personalizer-Diagnose ist belegt: 9.675 Besucher in drei
+   Monaten erzeugten 14 Bestellungen. Neun Pflichtfelder, über 40 Farbfelder,
+   Foto-Upload zuletzt.
+2. **Traffic.** Es lief Facebook-Werbung von Dezember bis Februar. Seit März/April
+   wurde nichts mehr gemacht — aus Zeitmangel, nicht wegen eines Problems.
 
 **Reihenfolge ist entscheidend:** Traffic anschalten, bevor die Conversion stimmt,
-verbrennt Geld — das ist bereits einmal passiert.
+verbrennt Geld — das ist bereits einmal passiert. Die Werbung hat funktioniert, die
+Seite hat die Besucher nicht abgeholt.
+
+**Fulfillment ist erledigt.** Die offenen Bestellungen sind Altlasten aus der
+Anfangszeit, keine unbelieferten Kunden. Bestätigt am 12.08.2026.
 
 ## Wirtschaftlicher Vorbehalt — korrigiert
 
@@ -188,6 +199,20 @@ Praktische Konsequenz: Vor jeder Behauptung über den Shop wird gegengeprüft �
 den Shopify-Connector, nicht aus dem Gedächtnis. Vor jedem Löschen wird auf
 Referenzen geprüft. Nach jeder Änderung wird unabhängig nachgelesen, ob sie
 tatsächlich sitzt.
+
+## Ablauf-Befehle
+
+Der Betreiber steuert Sitzungsbeginn und -ende über zwei Klartext-Befehle. **Kein
+Schrägstrich, einfach so getippt:**
+
+| Eingabe | Was zu tun ist |
+|---|---|
+| **`start petworld`** | Skill `start-petworld` ausführen: Projektstand lesen, Repo und Connector prüfen, Stand melden, nächsten Schritt vorschlagen — und auf Bestätigung warten |
+| **`ende petworld`** | Skill `ende-petworld` ausführen: alles Wissen aus dem Gespräch ins Repo schreiben, Entscheidungs-Log und TODO aktualisieren, committen, pushen, Übergabe ausgeben |
+
+Beide Abläufe sind verbindlich und werden vollständig abgearbeitet, auch wenn die
+Sitzung kurz war. **Nach `ende petworld` darf der Chat verloren gehen, ohne dass
+Wissen verloren geht.**
 
 ## Vorgehen
 

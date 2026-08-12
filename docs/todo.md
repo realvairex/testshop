@@ -36,16 +36,27 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 - [ ] Erst danach: GemPages-Dateien entfernen — 60 Sections, 31 Templates, `gp-global.css`
 - [ ] Bilder-Leitfaden zusätzlich direkt an den Foto-Upload auf der Produktseite legen
 
-### Danach: Produktseite
+### Produktseite
 
-- [ ] `price`- und `variant-picker`-Block prüfen und sauber verdrahten
-- [ ] Trust-Bar mit `sp-trust-badges` (liegt ungenutzt im Theme, schon bezahlt)
-- [ ] **Lieferzeit 5 Werktage** an den Kaufen-Button
-- [ ] Gratisversand-Hinweis („noch X € bis Gratisversand")
+- [x] **Foto-Hinweis mit Link auf den Bilder-Leitfaden** unter dem Produkttitel
+- [x] **Vertrauens-Leiste** unter dem Kaufen-Button: Lieferzeit 5 Werktage ·
+      Gratisversand ab 50 € · Produktion in Europa · Einzelfertigung.
+      Nativ aus Fabric-Blöcken, nicht über eine App
+- [ ] ⚠️ **„ab 50 €" auf „ab 35 €" ändern**, sobald der Versand umgestellt ist —
+      sonst steht eine falsche Angabe auf der Seite
+- [ ] Gratisversand-Fortschritt im Warenkorb („noch X € bis Gratisversand")
 - [ ] Sticky Add-to-Cart auf Mobil — 78 % des Traffics ist mobil
-- [ ] FAQ auf der Produktseite mit `sp-faq`
-- [ ] Bewertungsblock vorbereiten (Inhalt später, siehe E11)
+- [ ] `price`- und `variant-picker`-Block prüfen (teeinblue rendert beides selbst)
+- [ ] FAQ auf der Produktseite
 - [ ] Prüfen, ob zusätzliche Galeriebilder neben der teeinblue-Vorschau möglich sind
+- [ ] Stern-SVG und getippte „(89)" entfernen — siehe E11, kommt zur Design-Phase
+
+### Startseite (Befunde aus der Sichtprüfung, siehe `startseite-befunde.md`)
+
+- [ ] **Call-to-Action im Hero** — aktuell gibt es dort keinen einzigen Button
+- [ ] **Vorher/Nachher im Hero** — der Hero zeigt fremde Tiere, nicht die Idee
+- [ ] Hero verdichten, erste Produktkachel auf Mobil früher sichtbar
+- [ ] Flagge und Sprachkürzel oben rechts angleichen (AT-Flagge neben „DE")
 
 ### Danach: Design-System
 
@@ -67,21 +78,28 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 - [ ] KALENDAR und PUZZLE aus dem Kundenkonto-Menü nehmen, solange sie leer sind
 - [ ] Puzzle-Produkte von `ARCHIVED` auf `DRAFT` — sie sind geplant, nicht eingestellt
 
-### Apps aufräumen — welche nutzt ihr wirklich?
+### Apps aufräumen
 
-Ungeklärt: **Stack** ($9,99/Monat), **TinySEO**, **AddressHero**, **Vidify**,
-**Collective**, **Messaging**, **Predis**, **CWILL Popup Email**,
+- [x] PageFly, Gelato, Section Star, Section Store, Dakaas deinstalliert (12.08.)
+
+Ungeklärt, ob überhaupt genutzt: **Stack** ($9,99/Monat), **TinySEO**, **AddressHero**,
+**Vidify**, **Collective**, **Messaging**, **Predis**, **CWILL Popup Email**,
 **Essential Announcer**, **Customix Personalizer** (zweiter Personalizer!).
 
 - [ ] Von **EGO Cart Upsell** ($12,99) und **AMP Slide Cart** eine behalten
 - [ ] CWILL vs. Klaviyo — Klaviyo kann Popups selbst
+- [ ] Alte Bestellungen stornieren oder archivieren, damit sie die Auswertungen
+      nicht weiter verfälschen
 
 ### Informationen, die ich noch brauche
 
-- [ ] **Werbebudget Dezember–Februar** — für die exakte CPA-Rechnung
+- [ ] 🔒 **Bleibt der Preis bei 19,95 €?** Nie beantwortet
+- [ ] 🔒 **Bundle-Staffel**: Vorschlag 2 Poster −15 %, 3 Poster −25 %. Passt das?
+      `FREUNDE10` (10 % ab 2 Stück) existiert bereits, aber nur als Code
+- [ ] **Werbebudget Dezember–Februar** — für die exakte Kosten-pro-Bestellung-Rechnung
 - [ ] **merchOne-Versandkosten** pro 20×30-Poster nach Österreich
 - [ ] **Echte Produktfotos** — Poster an der Wand, in der Hand, Unboxing
-- [ ] **Bundle-Staffel**: Vorschlag 2 Poster −15 %, 3 Poster −25 %. Passt das?
+- [ ] **Referenz-Shops** für die Design-Richtung (heybalu.com ist als Inspiration bekannt)
 
 ---
 

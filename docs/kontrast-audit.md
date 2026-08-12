@@ -73,15 +73,20 @@ Die tatsächliche Prüfung ergab:
 **Lehre: Verwendung eines Schemas immer über die tatsächliche Block-Zuordnung prüfen,
 nie über Textsuche. Und bei Sections mit Medien gilt die Schema-Farbe nicht.**
 
-## Ein offener Punkt zum Ansehen
+## Sichtprüfung: bestätigt
 
-Im Startseiten-Hero stehen zwei Texte direkt untereinander auf demselben Bild:
+Der Betreiber hat am 12.08.2026 Screenshots geliefert. Damit ist der Befund nicht mehr
+nur berechnet, sondern belegt:
 
-| Text | Farbe |
-|---|---|
-| „NEWSLETTER" | `var(--color-foreground)` → `#1a1a1a`, fast schwarz |
-| „Als Dank erhältst du einen 10 % Rabattcode…" | `var(--color-foreground-heading)` → `#f5f5f5`, fast weiß |
+- **Die Hauptnavigation** steht weiß auf Petrol und wirkt sichtbar blass. Genau die
+  berechneten 2,2:1.
+- **Im Newsletter-Kasten** sitzt „NEWSLETTER" dunkel und gut lesbar, der Satz darunter
+  („Als Dank erhältst du…") ist weiß auf Petrol und deutlich schwächer.
 
-Fast schwarz und fast weiß auf demselben Hintergrund. Welcher der beiden schlecht
-lesbar ist, hängt vom Bild ab — beide können nicht gleichzeitig gut sitzen.
-**Beim nächsten Blick auf die Startseite prüfen.**
+Damit ist auch die zuvor offene Frage beantwortet: Von den beiden gegensätzlich
+gefärbten Texten im selben Block ist der **weiße** der problematische, nicht der dunkle.
+
+Weitere Beobachtungen aus denselben Screenshots in `startseite-befunde.md`.
+
+**Noch offen:** Prüfung auf einem echten Mobilgerät. Alle bisherigen Beobachtungen
+stammen aus Desktop-Ansichten, während 78 % des Traffics mobil ist.

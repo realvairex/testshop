@@ -64,14 +64,57 @@ Der Shopify-Median liegt bei etwa 1,4 %. **Der Shop liegt rund zehnfach darunter
 | davon bis Checkout | 3 |
 | davon abgeschlossen | **0** |
 
-### ⚠️ Vorbehalt bei den Bestellungen
+### ⚠️ Die echte Conversion liegt bei etwa 0,07 %
 
 Von 16 Bestellungen tragen **acht** den Nachnamen **Kases** (Julian ×4, Gerald ×2,
-Petra, Paul). Mehrere davon über exakt 11,00 € — unter dem Posterpreis von 19,95 €,
-also vermutlich mit Testrabatt.
+Petra, Paul). Mehrere davon über exakt 11,00 €, also unter dem Posterpreis.
 
-**Falls das Test- oder Familienbestellungen sind, liegt die echte Conversion bei rund
-0,07 %.** Muss der Betreiber bestätigen.
+**Vom Betreiber am 12.08.2026 bestätigt: Familie und Testbestellungen.**
+
+Damit bleiben rund **acht echte Kundenbestellungen** auf 11.072 Sessions —
+eine tatsächliche Conversion Rate von etwa **0,07 %**, also rund ein Zwanzigstel
+des Shopify-Medians.
+
+Die 11-€-Bestellungen erklären sich über die Codes `DANKE26` (13,85 €) und `Danke`
+(40 €), die inzwischen deaktiviert sind.
+
+## Werbung: was Dezember bis Februar war
+
+**Vom Betreiber bestätigt:** Es lief **Facebook-Werbung**. Seit **März/April 2026**
+wurde nichts mehr am Shop und nichts mehr für den Shop gemacht — aus Zeitmangel.
+Das erklärt den Traffic-Verlauf vollständig.
+
+**Werbebudget: noch nicht bekannt**, wird nachgereicht.
+
+Grobe Einordnung bis dahin: 9.675 Sessions erzeugten 14 Bestellungen — also rund
+**690 Besucher pro Bestellung**. Bei einem realistischen Klickpreis von 0,30–0,60 €
+im DACH-Raum entspricht das etwa 185–310 € Werbekosten je Bestellung, bei einem
+Deckungsbeitrag von 16,63 €.
+
+**Kernaussage: Die Werbung hat funktioniert — sie hat Menschen gebracht. Die Seite
+hat sie nicht abgeholt.**
+
+## Versand — Ist-Zustand
+
+| Zone | unter 50 € | ab 50 € |
+|---|---|---|
+| **Österreich** | **5,50 €** | 0 € |
+| Deutschland | 4,00 € | 0 € |
+| EU (27 Länder) | 0 € | 0 € |
+| Europa (CH, UK, NO, IS, LI) | 0 € | 0 € |
+
+Österreich ist der einzige Markt, in dem Kunden Versand zahlen — und der teuerste.
+**Beschlossen (E10): Schwelle auf 35 € senken**, damit ein gerahmtes 20×30 (39,95 €)
+den Gratisversand auslöst. Umsetzung durch den Betreiber, Stand 12.08. noch offen.
+
+**Lieferzeit: 5 Werktage** (vom Betreiber bestätigt, steht so auf der Produktseite).
+
+**POD-Partner: nur noch merchOne.** Gelato wurde deinstalliert, kein Produkt hing daran.
+**Der Einkaufspreis enthält den Versand nicht** — bei Bestellungen unter 50 € deckt
+die Versandgebühr des Kunden ihn weitgehend, darüber trägt ihn der Shop.
+
+**Noch offen:** Was berechnet merchOne für den Versand eines 20×30-Posters nach
+Österreich?
 
 ## Marge — deutlich besser als angenommen
 
@@ -96,7 +139,19 @@ der Deckungsbeitrag um geschätzte 4–6 €.
 Basis-Poster. Der Rahmen-Upsell (Befund E im Personalizer-Audit) ist damit
 quantifiziert — er wird aktuell als nackter Textbutton ohne Bild und Preis verschenkt.
 
-## Fulfillment — der Befund des Betreibers ist belegt
+## Fulfillment — geklärt, **kein Handlungsbedarf**
+
+> **Antwort des Betreibers vom 12.08.2026:** Die offenen Bestellungen sind
+> **Altlasten aus der Anfangszeit und können ignoriert werden.** Es sind keine
+> unbelieferten Kundenbestellungen.
+>
+> Damit ist der ursprünglich als dringendster Punkt eingestufte Befund **erledigt**.
+> Empfehlung, die noch offen ist: die Bestellungen in Shopify stornieren oder
+> archivieren, damit sie die Auswertungen nicht weiter verfälschen.
+
+Die ursprüngliche Analyse bleibt zur Nachvollziehbarkeit stehen:
+
+### Ursprünglicher Befund (überholt)
 
 **13 von 16 Bestellungen sind nicht vollständig ausgeliefert:**
 

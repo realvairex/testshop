@@ -1,66 +1,86 @@
-# Übergabe an die lokale Session
+# Übergabe
 
-Stand: **11.08.2026**. Bis hier wurde ausschließlich analysiert — **kein Theme-Code
-verändert**.
+Stand: **12.08.2026**
 
-## Zuerst lesen
+## Sitzung starten
+
+Schreib in einen neuen Chat einfach:
+
+```
+start petworld
+```
+
+Das liest den Projektstand, prüft Repo und Shopify-Connector und meldet, wo wir stehen.
+Zum Abschluss einer Sitzung entsprechend `ende petworld` — das sichert alles Wissen
+aus dem Gespräch ins Repo, bevor der Chat geschlossen wird.
+
+## Dokumente
 
 | Datei | Inhalt |
 |---|---|
-| [`../CLAUDE.md`](../CLAUDE.md) | Projektkontext, Architektur-Entscheidungen, Sicherheitsregeln. Wird von Claude Code automatisch geladen. |
-| [`entscheidungen.md`](entscheidungen.md) | Was entschieden ist, was offen ist, was bewusst zurückgestellt wurde |
-| [`offene-fragen.md`](offene-fragen.md) | Checkliste zum Abhaken |
-
-## Analysen
-
-| Datei | Inhalt |
-|---|---|
-| [`theme-audit.md`](theme-audit.md) | Fabric 3.1.0, drei ungenutzte Page-Builder, Karteileichen, Design-Tokens |
-| [`personalizer-audit.md`](personalizer-audit.md) | Neun Befunde zum teeinblue-Ablauf, aus einem Screenshot der Live-Produktseite |
-| [`personalizer-app-entscheidung.md`](personalizer-app-entscheidung.md) | teeinblue behalten oder zu Customily wechseln — offene Entscheidung mit Kostenrechnung |
-| [`setup-lokal.md`](setup-lokal.md) | Von null zur Live-Vorschau auf dem eigenen Rechner |
-
-Dazu: [`.claude/skills/petworld-design/SKILL.md`](../.claude/skills/petworld-design/SKILL.md)
-— Design-Regeln, wird bei Gestaltungsarbeit automatisch herangezogen.
+| [`../CLAUDE.md`](../CLAUDE.md) | Kontext, Architektur, Sicherheitsregeln, Grundhaltung. Wird automatisch geladen |
+| [`entscheidungen.md`](entscheidungen.md) | Entscheidungen E1–E13 · **Korrekturen K1–K6** |
+| [`todo.md`](todo.md) | Was ansteht, nach Zuständigkeit getrennt |
+| [`offene-fragen.md`](offene-fragen.md) | Was beantwortet ist, was fehlt, was blockiert |
+| [`zahlen.md`](zahlen.md) | Traffic, Conversion, Kosten, Versand, Werbung |
+| [`theme-audit.md`](theme-audit.md) | Fabric 3.1.0, Page-Builder, Karteileichen |
+| [`personalizer-audit.md`](personalizer-audit.md) | Neun Befunde zum teeinblue-Ablauf |
+| [`kontrast-audit.md`](kontrast-audit.md) | WCAG-Rechnung aller 13 Farbschemata |
+| [`startseite-befunde.md`](startseite-befunde.md) | Sichtprüfung Hero und Newsletter |
+| [`markennamen.md`](markennamen.md) | DOGUE & Co, Vergleich mit heybalu.com |
+| [`personalizer-app-entscheidung.md`](personalizer-app-entscheidung.md) | teeinblue behalten oder Customily |
+| [`setup-lokal.md`](setup-lokal.md) | Lokale Live-Vorschau einrichten |
+| [`archiv-gempages/`](archiv-gempages/) | Gesicherte Inhalte vor dem GemPages-Ausbau |
 
 Als lesbare Seite: **[PetWorld Shop-Audit](https://claude.ai/code/artifact/eb8007e1-4516-470e-94ce-376c38daacdb)**
 
-## Der Stand in fünf Sätzen
+## Der Stand in sechs Sätzen
 
-1. Das Theme (**Fabric 3.1.0**) ist eine gute Basis — das Problem sind die Aufsätze.
-2. Der **Personalizer überfordert**: neun Pflichtfelder, über 40 Farbfelder, der
-   Foto-Upload steht ganz unten.
-3. **Drei ungenutzte Page-Builder** (GemPages, PageFly, Shogun) laden auf jeder Seite mit.
-4. Die Marke hat **kein Typo-System** — eine Schriftfamilie für alles, Überschriften auf
-   76 % Deckkraft.
-5. Zwei Fragen außerhalb des Codes blockieren die Strategie: der **Preis** (19,95 € lässt
-   kaum Werbebudget) und die **Markennamen** (Parodien von Vogue, Playboy, Forbes,
-   National Geographic).
+1. Das Theme (**Fabric 3.1.0**) ist eine gute Basis — die Probleme lagen in den
+   Aufsätzen, und die sind größtenteils entfernt.
+2. **Die Conversion ist das Kernproblem: 0,07 % echt**, nachdem Familien- und
+   Testbestellungen herausgerechnet sind. Rund ein Zwanzigstel des Medians.
+3. **Der Personalizer überfordert** — neun Pflichtfelder, über 40 Farbfelder, der
+   Foto-Upload steht ganz unten. Das ist der größte Hebel im Projekt.
+4. **Traffic gibt es aktuell keinen.** Facebook-Werbung lief Dezember bis Februar,
+   seitdem nichts mehr. Die Werbung hat funktioniert, die Seite hat nicht abgeholt.
+5. **Die Marge trägt**: 16,63 € Deckungsbeitrag beim Basis-Poster, 40,60 € beim
+   gerahmten 40×60. Der Rahmen-Upsell entscheidet, ob Werbung je rechenbar wird.
+6. **Zwei Entscheidungen des Betreibers stehen aus**: der Preis (19,95 €?) und die
+   Bundle-Staffel.
+
+## Was in dieser Sitzung erledigt wurde
+
+- Theme-Baseline gesichert (`cacbd97`), vollständiges Audit
+- **Shogun, PageFly und vier verwaiste Sections** aus dem Theme entfernt
+- **Sechs Apps deinstalliert**: PageFly, Gelato, Section Star, Section Store, Dakaas
+- **Zwei gefährliche Rabattcodes deaktiviert** (`Danke` 40 €, `DANKE26` 13,85 €) —
+  beide waren unbegrenzt oft und ohne Ablaufdatum nutzbar
+- **GemPages-Inhalte archiviert**, bevor die App entfernt wird
+- **`page.about-us.json`** angelegt, `page.json` neutralisiert — der Über-uns-Text
+  lag im Standard-Template und erschien auf jeder Seite ohne eigenes Template
+- **Produktseite**: Hinweis auf den Bilder-Leitfaden unter dem Titel,
+  Vertrauens-Leiste unter dem Kaufen-Button
+- Kontrast-Audit aller Farbschemata, Sichtprüfung der Startseite
+- **Sechs eigene Fehleinschätzungen korrigiert und dokumentiert** (K1–K6)
 
 ## Als Nächstes
 
-**Phase 1 — startklar, blockiert durch nichts:**
-- 2,4 MB tote Page-Builder-Dateien und 31 unbenutzte Templates entfernen
-  *(vorher prüfen: nutzt eine echte Seite ein `gp-template`?)*
-- Token-System aufsetzen, Heading-Kontrast korrigieren
+**Blockiert, bis der Shopify-Connector im Chat aktiv ist:**
+301-Weiterleitungen der GemPages-URLs · Impressum zusammenführen ·
+GemPages-Dateien entfernen · Versandschwelle gegenprüfen
 
-**Phase 2 — braucht eine Design-Richtung:**
-Entweder Referenz-Shops nennen (Frage 21) oder einen Vorschlag als Prototyp machen
-lassen und darauf reagieren.
+**Sofort möglich:**
+Die **Personalizer-Vorlage** für teeinblue — exakte Feldreihenfolge, Bedingungsketten,
+Beschriftungen und fertige Texte. Das ist der direkteste Hebel auf die Conversion.
 
-**Phase 3 — im teeinblue-Admin, nicht im Theme:**
-Bedingungsketten für den Schritt-für-Schritt-Ablauf, Upload nach vorn, Pflichtfelder
-auf zwei reduzieren.
-
-## Erster Satz für die neue Session
-
-> Lies CLAUDE.md und docs/. Wir arbeiten an PetWorld weiter. Die Audits sind fertig,
-> Phase 1 steht an.
+**Beim Betreiber:**
+Versandschwelle auf 35 € · Live-Theme duplizieren · GemPages noch **nicht**
+deinstallieren · Preis- und Bundle-Entscheidung
 
 ## Was lokal besser wird
 
-Die Cloud-Session konnte nur GitHub und Paket-Registries erreichen. Deshalb blieb
-offen, was nur im Browser sichtbar ist: die Live-Vorschau des Personalizers, das
-Verhalten auf dem Handy, das Warenkorb-Vorschaubild, Lighthouse-Messungen und die
-teeinblue-Doku. Diese Punkte stehen in `offene-fragen.md` unter
-*„Zu prüfen, sobald der Shop lokal läuft"*.
+Diese Umgebung erreicht nur GitHub und Paket-Registries. Offen blieb daher alles, was
+nur im Browser sichtbar ist: Live-Vorschau des Personalizers, Verhalten auf dem Handy,
+Warenkorb-Vorschaubild, Lighthouse-Messungen, teeinblue-Doku. Siehe
+[`setup-lokal.md`](setup-lokal.md).
