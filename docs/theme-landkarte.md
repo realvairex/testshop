@@ -70,6 +70,23 @@ prüfen, ob der Personalizer noch erscheint.
 | `blocks/` | 696 KB | 87 Blocks — die Bausteine, aus denen Templates bestehen |
 | `config/` | 92 KB | `settings_schema.json` (Struktur), `settings_data.json` (Werte) |
 
+## Installierte Apps
+
+| App | Status | Bewertung |
+|---|---|---|
+| **teeinblue** | aktiv, App-**Embed** | Kern des Geschäfts. Rendert Preis und Varianten selbst. Fulfillment-Workflow gilt als veraltet |
+| **merchOne** | aktiv | Einziger POD-Partner. Versand **nicht** im Einkaufspreis enthalten |
+| **smind / Sections Pro** | aktiv | `sp-*` Sections, auf der Startseite genutzt |
+| **Klaviyo** | aktiv | Unterbewertet — Warenkorbabbruch-Mails sind der billigste Hebel |
+| **GemPages** | aktiv | ⏳ Erst Weiterleitungen setzen, dann deinstallieren. Fünf Seiten nutzen `gp-template`-Suffixe |
+| PageFly, Shogun, Gelato, Section Star, Section Store, Dakaas | **deinstalliert** | 12.08.2026, Theme-Reste entfernt |
+| Opus Cart Upsell | nicht mehr installiert | App-Embed-Eintrag liegt noch in `settings_data.json` (B12) |
+
+**Nutzen ungeklärt:** Stack ($9,99/Monat) · TinySEO · AddressHero · Vidify ·
+Collective · Messaging · Predis · CWILL Popup Email · Essential Announcer ·
+**Customix Personalizer** (zweiter Personalizer!) · **EGO Cart Upsell** ($12,99)
+und **AMP Slide Cart** parallel — eine davon reicht.
+
 ## Section-Präfixe erkennen
 
 | Präfix | Herkunft | Status |
