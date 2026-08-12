@@ -54,8 +54,13 @@ shopify theme pull --store DEIN-HANDLE.myshopify.com
 - **Einfachste Lösung, nichts auf Vorrat.** Keine Blöcke, Sections oder Abstraktionen
   für Fälle, die niemand verlangt hat.
 - **Nur ändern, was gefordert ist.** Bestehenden Stil beibehalten, nichts nebenbei
-  umbauen. *Ausnahme für dieses Projekt:* Das Entfernen toter App-Reste ist ausdrücklich
-  beauftragt — aber nur nach nachgewiesener Referenzfreiheit und Freigabe.
+  umbauen. Prüfsatz: *Jede geänderte Zeile muss sich direkt auf eine Anfrage
+  zurückführen lassen.* Vorhandenen toten Code erwähnen statt löschen — **außer es
+  wurde beauftragt**, wie beim Ausbau der Page-Builder.
+- **Verify, don't trust.** Quellen nie aus dem Gedächtnis oder einer früheren
+  Zusammenfassung auswerten: neu holen und die eigene Aussage **gegnerisch** gegenlesen.
+  `WebFetch` liefert eine Modell-Zusammenfassung, nicht das Original — für GitHub
+  stattdessen `curl` auf `raw.githubusercontent.com`.
 - **Auffälligkeiten sofort melden** — Sicherheitsrisiken, Datenverlust, Widersprüche,
   Dinge die später teuer werden.
 - **Mitdenken statt abarbeiten.** Bessere Lösung nennen, die verlangte trotzdem liefern.
@@ -70,14 +75,10 @@ in `docs/entscheidungen.md`, **mit der Lehre daraus**. Bisher sieben, alle lesen
 
 ## Architektur-Entscheidungen
 
-Begründungen in `docs/entscheidungen.md` (E1–E15).
-
-1. **Liquid bleibt, kein Headless.** Hydrogen würde teeinblue zerstören.
-2. **Motion One statt Framer Motion.** Framer Motion ist React-only.
-3. **Dreischichtige Design-Tokens** (primitive → semantic → component), angebunden an
-   `settings_schema.json`.
-4. **Bausteine nativ bauen, nicht über Apps.** Überlebt Deinstallationen.
-5. **Design-Entscheidungen zuerst als HTML-Prototyp**, erst nach Freigabe in Liquid.
+Kurz: **Liquid bleibt** (Headless würde teeinblue zerstören) · **Motion One** statt
+Framer Motion · **dreischichtige Design-Tokens** · **Bausteine nativ statt über Apps** ·
+**Design zuerst als HTML-Prototyp**, erst nach Freigabe in Liquid.
+Begründungen und alles Weitere in `docs/entscheidungen.md` (E1–E17).
 
 ## Wo was steht
 

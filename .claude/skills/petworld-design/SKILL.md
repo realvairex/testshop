@@ -176,6 +176,22 @@ Deutsch, Duzen, Österreich als Hauptmarkt.
 - Keine Superlative, keine künstliche Dringlichkeit außer bei echten Fristen
   (Weihnachts-Deadline ist echt).
 
+## Erfolgskriterium vor dem Anfangen
+
+Der Grundsatz „Erfolgskriterium benennen, dann in Schleife bis erfüllt" stammt aus
+testgetriebener Entwicklung. **Hier gibt es keine Testsuite** — die Entsprechung sieht
+anders aus. Vor jeder Aufgabe ein prüfbares Kriterium formulieren:
+
+| Statt | Prüfbar formuliert |
+|---|---|
+| „Produktseite verbessern" | Trust-Bar sichtbar · teeinblue erscheint weiterhin · auf 375 px kein Umbruch |
+| „Kontrast beheben" | Alle betroffenen Schemata rechnerisch ≥ 4,5:1 |
+| „Aufräumen" | Kein Template referenziert eine gelöschte Datei · alle JSON parsebar · Vergleich gegen `cacbd97` zeigt nur beabsichtigte Löschungen |
+| „Seiten zusammenführen" | Alte URL leitet mit 301 weiter · neue Seite rendert Inhalt · kein Menülink zeigt ins Leere |
+
+Bei mehrschrittigen Aufgaben den Plan vorher hinschreiben:
+`1. Schritt → Prüfung:` … `2. Schritt → Prüfung:` …
+
 ## Vor dem Abschluss prüfen
 
 - [ ] Erscheint der teeinblue-Personalizer noch?
