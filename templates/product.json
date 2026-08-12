@@ -506,61 +506,6 @@
                     "pw_trust_ship_text"
                   ]
                 },
-                "pw_trust_pay": {
-                  "type": "group",
-                  "name": "pw_trust_pay",
-                  "settings": {
-                    "content_direction": "row",
-                    "vertical_on_mobile": false,
-                    "vertical_alignment": "center",
-                    "horizontal_alignment": "flex-start",
-                    "gap": 10,
-                    "width": "fill",
-                    "height": "fit",
-                    "inherit_color_scheme": true,
-                    "border": "none",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {
-                    "pw_trust_pay_icon": {
-                      "type": "icon",
-                      "settings": {
-                        "icon": "lock",
-                        "width": 20
-                      }
-                    },
-                    "pw_trust_pay_text": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Sichere Zahlung – Klarna, PayPal, Apple Pay</p>",
-                        "width": "fill",
-                        "max_width": "none",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.875rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      }
-                    }
-                  },
-                  "block_order": [
-                    "pw_trust_pay_icon",
-                    "pw_trust_pay_text"
-                  ]
-                },
                 "pw_trust_print": {
                   "type": "group",
                   "name": "pw_trust_print",
@@ -615,12 +560,67 @@
                     "pw_trust_print_icon",
                     "pw_trust_print_text"
                   ]
+                },
+                "pw_trust_origin": {
+                  "type": "group",
+                  "name": "pw_trust_origin",
+                  "settings": {
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "vertical_alignment": "center",
+                    "horizontal_alignment": "flex-start",
+                    "gap": 10,
+                    "width": "fill",
+                    "height": "fit",
+                    "inherit_color_scheme": true,
+                    "border": "none",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "pw_trust_origin_icon": {
+                      "type": "icon",
+                      "settings": {
+                        "icon": "map_pin",
+                        "width": 20
+                      }
+                    },
+                    "pw_trust_origin_text": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Produktion in Europa</p>",
+                        "width": "fill",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      }
+                    }
+                  },
+                  "block_order": [
+                    "pw_trust_origin_icon",
+                    "pw_trust_origin_text"
+                  ]
                 }
               },
               "block_order": [
                 "pw_trust_time",
                 "pw_trust_ship",
-                "pw_trust_pay",
+                "pw_trust_origin",
                 "pw_trust_print"
               ]
             }
@@ -1043,9 +1043,9 @@
       "custom_css": [
         ".product-badges {display: none !important;}",
         ".price {color: #e32827 !important;}",
-        " /* button animation */.button-secondary {max-height: 40px !important; max-width: 150px !important; padding: 15px 20px !important; border-radius: 20px !important; background: linear-gradient(to top, #27363b 50%, #76b2ae 50%) bottom !important; background-size: 100% 200% !important; transition: background-position 0.3s ease-out !important;}",
+        " .button-secondary {max-height: 40px !important; max-width: 150px !important; padding: 15px 20px !important; border-radius: 20px !important; background: linear-gradient(to top, #27363b 50%, #76b2ae 50%) bottom !important; background-size: 100% 200% !important; transition: background-position 0.3s ease-out !important;}",
         ".button-secondary:hover {background-position: top !important;}",
-        " /* button animation */"
+        " "
       ],
       "name": "t:names.products_carousel",
       "settings": {
