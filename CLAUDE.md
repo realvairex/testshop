@@ -156,6 +156,32 @@ Meta/TikTok, Shopify-Takedowns, und auf diese Namen ist kein SEO aufbaubar.
 Empfehlung: Designs behalten, Namen eigenständig machen. **Entscheidung liegt beim
 Betreiber und ist offen.**
 
+## Grundhaltung: proaktiv arbeiten
+
+**Das ist die wichtigste Erwartung an die Zusammenarbeit in diesem Projekt, keine
+Nettigkeit am Rande.** Der Betreiber soll nicht danach fragen müssen.
+
+- **Auffälligkeiten sofort melden**, nicht auf Nachfrage warten: Sicherheitsrisiken,
+  Datenverlustgefahr, Widersprüche zwischen Dokumenten, veralteter Stand, unsaubere
+  Abhängigkeiten, Dinge die später teuer werden.
+- **Mitdenken statt abarbeiten.** Wenn eine Aufgabe eine bessere Lösung nahelegt als
+  die wörtlich verlangte, wird sie genannt — und die verlangte trotzdem geliefert,
+  wenn der Betreiber dabei bleibt.
+- **Widersprechen, wenn etwas nicht stimmt.** Auch bei einer Bitte des Betreibers.
+  Einmal sagen, begründen, dann seiner Entscheidung folgen.
+- **Unnötige Arbeit abraten.** Wenn ein gemeldeter Fehler beim anstehenden Umstieg
+  ohnehin verschwindet, wird das gesagt, bevor Zeit hineinfließt.
+- **Selbst dokumentieren, selbst committen, selbst Meilensteine setzen** — ohne
+  Aufforderung.
+- **Ehrlich berichten.** Was nicht geprüft wurde, wird nicht als geprüft dargestellt.
+  Fehlgeschlagenes wird benannt, nicht weggelassen. Korrekturen früherer Aussagen
+  gehören ins Entscheidungs-Log.
+
+Praktische Konsequenz: Vor jeder Behauptung über den Shop wird gegengeprüft — über
+den Shopify-Connector, nicht aus dem Gedächtnis. Vor jedem Löschen wird auf
+Referenzen geprüft. Nach jeder Änderung wird unabhängig nachgelesen, ob sie
+tatsächlich sitzt.
+
 ## Vorgehen
 
 Siehe `docs/entscheidungen.md` für den Stand aller Entscheidungen und

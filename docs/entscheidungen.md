@@ -15,6 +15,11 @@ gleichen Stand hat.
 | E6 | **Design-Entscheidungen als HTML-Prototyp**, erst danach Liquid | Schneller zu vergleichen, spart Push-Runden. |
 | E7 | **Schritt-für-Schritt-Personalizer ist das Ziel** | Ausdrücklicher Wunsch: erst nur Foto-Upload sichtbar, dann Primärfarbe, dann der Rest. |
 | E8 | **Keine Credentials über den Chat** | Ephemere Container, persistenter Verlauf. Falls nötig: `.env` mit `.gitignore`. |
+| E9 | **Proaktive Arbeitsweise ist verbindlich** | Ausdrückliche Anweisung des Betreibers am 12.08. Ausformuliert in `CLAUDE.md` unter „Grundhaltung". |
+| E10 | **Gratisversand-Schwelle Österreich auf 35 €** | Ein gerahmtes 20×30 (39,95 €) löst damit Gratisversand aus — der Versand wird zum Verkaufsargument für den Rahmen statt zur Hürde. Umsetzung durch den Betreiber im Admin. |
+| E11 | **Fake-Bewertungen bleiben vorerst** | Betreiber-Entscheidung vom 12.08.: wird beim Design-Umbau angegangen, nicht jetzt. Technisch ein Stern-SVG plus getippte „(89)" in `templates/product.json` — jederzeit in Minuten entfernbar. |
+| E12 | **Markennamen bleiben vorerst** | Betreiber-Entscheidung vom 12.08. Siehe `docs/markennamen.md` für die Faktenlage und den risikoärmeren Kompromiss. |
+| E13 | **KALENDAR und PUZZLE sind geplante Produktreihen** | Keine Karteileichen. Solange leer, sollten sie aber nicht im Menü verlinkt sein. |
 
 ## Offen — muss der Betreiber entscheiden
 
