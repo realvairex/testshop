@@ -89,18 +89,50 @@ Ausführlich in `docs/theme-audit.md` und `docs/personalizer-audit.md`.
 4. **Preis und Varianten** werden ausschließlich von teeinblue clientseitig gerendert.
    Die nativen `price`- und `variant-picker`-Blöcke existieren, sind aber nicht platziert.
 
-## Wirtschaftlicher Vorbehalt
+## Die Lage in Zahlen
 
-Bei 19,95 € pro Poster bleibt nach Druck, Versand und Zahlungsgebühren wenig
-Deckungsbeitrag. Ein CPA von 15–25 € ist in dieser Nische normal — damit ist bezahlte
-Werbung bei diesem Preis kaum finanzierbar. Vergleichbare Shops (Crown & Paw,
-West & Willow) verkaufen bei 50–90 $.
+**Vollständig in `docs/zahlen.md`** (Shopify-Connector, 12.08.2026). Das Wichtigste:
 
-Der permanente Streichpreis 24,95 → 19,95 ist außerdem nach der EU-Omnibus-Richtlinie
+| | |
+|---|---|
+| Sessions letzte 12 Monate | 11.072 — davon 87 % in Dez–Feb |
+| Sessions aktuell | **26 im Monat** (Höchststand war 3.681) |
+| Bestellungen gesamt | **16** |
+| Bruttoumsatz gesamt | **616 €** |
+| **Conversion Rate** | **0,14 %** — etwa ein Zehntel des Shopify-Medians |
+| Traffic-Quelle | 78 % Social, fast nur mobil. Suche: 98 Sessions im Jahr |
+| Fulfillment | **13 von 16 Bestellungen nicht vollständig ausgeliefert** |
+
+**Drei Probleme, in dieser Reihenfolge:**
+
+1. **Fulfillment.** Bezahlte Bestellungen aus Dezember 2025 stehen weiterhin auf
+   `IN_PROGRESS`. Entweder nie geliefert oder der POD-Partner meldet den Status nicht
+   zurück. Dringend, unabhängig von allem anderen.
+2. **Conversion 0,14 %.** Die Personalizer-Diagnose ist damit belegt: 9.675 Besucher in
+   drei Monaten haben 14 Bestellungen erzeugt.
+3. **Traffic.** Aktuell praktisch keiner.
+
+**Reihenfolge ist entscheidend:** Traffic anschalten, bevor die Conversion stimmt,
+verbrennt Geld — das ist bereits einmal passiert.
+
+## Wirtschaftlicher Vorbehalt — korrigiert
+
+Frühere Fassungen dieses Dokuments warnten, bei 19,95 € bleibe zu wenig
+Deckungsbeitrag für Werbung. **Das war zu pessimistisch und basierte auf geschätzten
+Kosten.**
+
+Echte Zahlen: Poster 20×30 kostet im Einkauf **3,32 €** bei 19,95 € Verkaufspreis —
+**16,63 € Deckungsbeitrag, 83 % Marge.** Ein gerahmtes 40×60 bringt **40,60 €**.
+Ein CPA von 10–14 € ist damit tragfähig.
+
+Offen bleibt, ob `unitCost` den Versand des POD-Partners enthält.
+
+Der permanente Streichpreis 24,95 → 19,95 bleibt nach der EU-Omnibus-Richtlinie
 heikel: Der durchgestrichene Preis muss der niedrigste der letzten 30 Tage sein.
 
-**Das ist keine Design-Frage.** Sie muss trotzdem beantwortet werden, sonst optimieren
-wir einen Shop, der sich keinen Traffic leisten kann.
+⚠️ Ebenfalls zu klären: Die Produktseite zeigt **89 Bewertungen** bei **16
+Bestellungen** insgesamt. Erfundene oder nicht verifizierte Bewertungen sind nach
+UWG und Omnibus-Richtlinie unzulässig.
 
 ## Markenrechtlicher Vorbehalt
 
