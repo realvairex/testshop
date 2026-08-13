@@ -47,8 +47,10 @@ unveröffentlicht gesetzt, der Menüeintrag im Shopify-Menü `footer` von
 Body und denselben `templateSuffix: impressum` — sie rendern identisch aus
 `templates/page.impressum.json`, es ging kein Inhalt verloren.
 
-**Noch offen:** GemPages-Dateien aus dem Theme entfernen (60 Sections, 31 Templates,
-`gp-global.css`), danach die App deinstallieren.
+**Ebenfalls erledigt am 13.08.:** 96 GemPages-Dateien aus dem Theme entfernt
+(60 Sections, 24 Templates, 6 Snippets, 5 Layouts, `gp-global.css`). Kein Produkt,
+keine Kollektion und keine Seite hängt mehr an einem GemPages-Template.
+**Die App darf jetzt deinstalliert werden.**
 **Nicht verifiziert:** Ob die Weiterleitungen im Browser wirklich 301 liefern —
 `pet-world.at` ist aus dieser Umgebung nicht erreichbar (U2). Belegt ist nur der
 API-Zustand.
@@ -95,12 +97,13 @@ Oben rechts steht die österreichische Flagge neben „EUR / DE".
 
 ## 🟡 Offen — niedrig
 
-### B11 · Kollektions-Templates zeigen ins Leere
+### ~~B11 · Kollektions-Templates zeigen ins Leere~~ — ✅ behoben 13.08.
 
-**BESTSELLER** und **POSTER** haben den `templateSuffix`
-`gp-template-562355879467287637`, das zugehörige Template existiert im Theme nicht.
-Shopify fällt auf `collection.json` zurück — funktioniert, ist aber unsauber und
-verwirrt bei der nächsten Analyse.
+**BESTSELLER** und **POSTER** hatten den `templateSuffix`
+`gp-template-562355879467287637`, das zugehörige Template existierte im Theme nicht.
+Beim GemPages-Ausbau auf leer gesetzt, zusammen mit den `gp-`Suffixen der fünf
+stillgelegten Seiten. Die gerenderte Ausgabe ändert sich dadurch nicht — Shopify fiel
+schon vorher auf `collection.json` zurück.
 
 ### B12 · Leichen in `settings_data.json`
 

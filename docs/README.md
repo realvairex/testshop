@@ -73,9 +73,11 @@ Als lesbare Seite: **[PetWorld Shop-Audit](https://claude.ai/code/artifact/eb800
 
 **Am 13.08. mit aktivem Connector erledigt:** sechs 301-Weiterleitungen gesetzt,
 die fünf GemPages-Zwillinge und das doppelte Impressum stillgelegt, das
-Fußzeilenmenü korrigiert. Versandschwelle gegengeprüft — steht noch bei 50 €.
+Fußzeilenmenü korrigiert. Danach **GemPages vollständig aus dem Theme entfernt** —
+96 Dateien, das Theme schrumpft von 116 auf 46 Sections. Versandschwelle
+gegengeprüft: steht noch bei 50 €.
 
-**Jetzt frei:** GemPages-Dateien aus dem Theme entfernen, danach die App deinstallieren.
+**Beim Betreiber:** GemPages kann jetzt im Admin deinstalliert werden.
 
 **Sofort möglich:**
 Die **Personalizer-Vorlage** für teeinblue — exakte Feldreihenfolge, Bedingungsketten,

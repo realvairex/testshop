@@ -34,8 +34,9 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 - [x] **301-Weiterleitungen** der fünf GemPages-URLs auf die nativen Fassungen (13.08.)
 - [x] **Doppeltes Impressum zusammenführen** — `copy-of-uber-uns` stillgelegt und
       umgeleitet, Menüeintrag umgehängt (13.08.)
-- [ ] **Jetzt frei: GemPages-Dateien entfernen** — 60 Sections, 31 Templates,
-      `gp-global.css`. Danach darf die App deinstalliert werden
+- [x] **GemPages-Dateien entfernt** (13.08.) — 96 Dateien: 60 Sections, 24 Templates,
+      6 Snippets, 5 Layouts, `gp-global.css`. Tote `templateSuffix`-Verweise im Shop
+      mitbereinigt (B11). **Die App darf jetzt deinstalliert werden**
 - [ ] Nach dem Live-Gang stichprobenartig prüfen, ob die sechs Weiterleitungen im
       Browser wirklich 301 liefern — aus dieser Umgebung nicht prüfbar (U2)
 - [ ] Bilder-Leitfaden zusätzlich direkt an den Foto-Upload auf der Produktseite legen
@@ -78,8 +79,8 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 - [ ] **Live-Theme duplizieren** als Sicherung im Admin
 - [ ] **Versandschwelle auf 35 €** (Österreich und Deutschland) — Entscheidung E10 steht.
       Am 13.08. gegengeprüft: steht **noch bei 50 €** (AT 5,50 €, DE 4,00 €)
-- [ ] **GemPages noch NICHT deinstallieren** — die Seiten sind seit 13.08. umgehängt,
-      aber erst wenn ich auch die Theme-Dateien entfernt habe
+- [ ] ✅ **GemPages kann jetzt deinstalliert werden** — Seiten umgehängt, Theme-Dateien
+      entfernt, keine `templateSuffix`-Verweise mehr (13.08.)
 - [ ] Drei verwaiste **Gelato-Versandprofile** löschen (B22)
 - [ ] `Weihnachten2025`-Code auf abgelaufen setzen
 - [ ] KALENDAR und PUZZLE aus dem Kundenkonto-Menü nehmen, solange sie leer sind

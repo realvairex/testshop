@@ -18,9 +18,9 @@ Orientierung im Fabric-3.1.0-Theme. Stand 12.08.2026.
 | Bilder-Leitfaden | `templates/page.leitfaden.json` | `main-page` |
 | Weiterempfehlen | `templates/page.weiterempfehlen-2.json` | `main-page` |
 
-**25 weitere Templates sind tot** — Backups von GemPages und Shogun (`gem-`,
-`gp-template`). **Die Weiterleitungen stehen seit 13.08.** — die fünf GemPages-Seiten
-sind unveröffentlicht und umgeleitet, die Dateien können entfernt werden.
+**Die toten GemPages- und Shogun-Templates sind am 13.08. entfernt** (`gem-`,
+`gp-template`). Was jetzt in `templates/` liegt, ist entweder in Verwendung oder
+Shopify-Standard.
 
 ## Navigation — die wichtigste Falle
 
@@ -63,11 +63,11 @@ prüfen, ob der Personalizer noch erscheint.
 
 | Ordner | Größe | Inhalt |
 |---|---|---|
-| `sections/` | 3,3 MB | 112 Sections — davon ~65 tote GemPages-Dateien |
-| `snippets/` | 2,8 MB | 127 Snippets, enthält viel GemPages-Ballast |
-| `templates/` | 1,1 MB | 56 Templates, 25 davon tot |
+| `sections/` | 992 KB | 46 Sections — GemPages-Dateien am 13.08. entfernt |
+| `snippets/` | 2,2 MB | 120 Snippets |
+| `templates/` | 540 KB | 26 Templates, alle in Verwendung oder Shopify-Standard |
 | `locales/` | 1,9 MB | 51 Sprachdateien, Standard von Shopify |
-| `assets/` | 976 KB | CSS und JS |
+| `assets/` | 908 KB | CSS und JS |
 | `blocks/` | 696 KB | 87 Blocks — die Bausteine, aus denen Templates bestehen |
 | `config/` | 92 KB | `settings_schema.json` (Struktur), `settings_data.json` (Werte) |
 
@@ -79,7 +79,7 @@ prüfen, ob der Personalizer noch erscheint.
 | **merchOne** | aktiv | Einziger POD-Partner. Versand **nicht** im Einkaufspreis enthalten |
 | **smind / Sections Pro** | aktiv | `sp-*` Sections, auf der Startseite genutzt |
 | **Klaviyo** | aktiv | Unterbewertet — Warenkorbabbruch-Mails sind der billigste Hebel |
-| **GemPages** | aktiv | ⏳ Erst Weiterleitungen setzen, dann deinstallieren. Fünf Seiten nutzen `gp-template`-Suffixe |
+| **GemPages** | aktiv | ✅ **Theme-Reste am 13.08. entfernt, kein Objekt hängt mehr daran — die App kann deinstalliert werden** |
 | PageFly, Shogun, Gelato, Section Star, Section Store, Dakaas | **deinstalliert** | 12.08.2026, Theme-Reste entfernt |
 | Opus Cart Upsell | nicht mehr installiert | App-Embed-Eintrag liegt noch in `settings_data.json` (B12) |
 
@@ -95,7 +95,7 @@ und **AMP Slide Cart** parallel — eine davon reicht.
 | kein Präfix | Fabric selbst | ✅ nutzen |
 | `sp-` | Smind / Sections Pro | ✅ App installiert, teils genutzt |
 | `smi-` | Smind | nur `smi-styles` ist aktiv |
-| `gp-`, `gem-` | GemPages | ⏳ tot, wird nach den Weiterleitungen entfernt |
+| `gp-`, `gem-` | GemPages | ✅ am 13.08. vollständig entfernt |
 | `ss-`, `shogun-` | Section Star / Store, Shogun | ✅ bereits entfernt |
 
 **Ungenutzt, aber brauchbar** — schon bezahlt, liegt bereit:
