@@ -31,9 +31,13 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 - [x] **`page.about-us.json` angelegt** — der Über-uns-Text lag im Standard-Template
       `page.json` und wurde dadurch auf jeder Seite ohne eigenes Template ausgespielt
 - [x] **`page.json` neutralisiert** — zeigt jetzt Seitentitel und Seiteninhalt
-- [ ] 301-Weiterleitungen der fünf GemPages-URLs auf die nativen Fassungen
-- [ ] Doppeltes Impressum zusammenführen (`impressum` und `copy-of-uber-uns`)
-- [ ] Erst danach: GemPages-Dateien entfernen — 60 Sections, 31 Templates, `gp-global.css`
+- [x] **301-Weiterleitungen** der fünf GemPages-URLs auf die nativen Fassungen (13.08.)
+- [x] **Doppeltes Impressum zusammenführen** — `copy-of-uber-uns` stillgelegt und
+      umgeleitet, Menüeintrag umgehängt (13.08.)
+- [ ] **Jetzt frei: GemPages-Dateien entfernen** — 60 Sections, 31 Templates,
+      `gp-global.css`. Danach darf die App deinstalliert werden
+- [ ] Nach dem Live-Gang stichprobenartig prüfen, ob die sechs Weiterleitungen im
+      Browser wirklich 301 liefern — aus dieser Umgebung nicht prüfbar (U2)
 - [ ] Bilder-Leitfaden zusätzlich direkt an den Foto-Upload auf der Produktseite legen
 
 ### Produktseite
@@ -72,8 +76,11 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 ### Sofort
 
 - [ ] **Live-Theme duplizieren** als Sicherung im Admin
-- [ ] **Versandschwelle auf 35 €** (Österreich und Deutschland) — Entscheidung E10 steht
-- [ ] **GemPages noch NICHT deinstallieren** — erst wenn ich die Seiten umgehängt habe
+- [ ] **Versandschwelle auf 35 €** (Österreich und Deutschland) — Entscheidung E10 steht.
+      Am 13.08. gegengeprüft: steht **noch bei 50 €** (AT 5,50 €, DE 4,00 €)
+- [ ] **GemPages noch NICHT deinstallieren** — die Seiten sind seit 13.08. umgehängt,
+      aber erst wenn ich auch die Theme-Dateien entfernt habe
+- [ ] Drei verwaiste **Gelato-Versandprofile** löschen (B22)
 - [ ] `Weihnachten2025`-Code auf abgelaufen setzen
 - [ ] KALENDAR und PUZZLE aus dem Kundenkonto-Menü nehmen, solange sie leer sind
 - [ ] Puzzle-Produkte von `ARCHIVED` auf `DRAFT` — sie sind geplant, nicht eingestellt

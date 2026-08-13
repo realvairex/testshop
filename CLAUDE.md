@@ -19,7 +19,7 @@ Reihenfolge. Zahlen in `docs/zahlen.md`.
 
 - **Theme: Fabric 3.1.0** (Shopify First-Party, block-basiert). Kein Build-Step.
   Reines Liquid, CSS, Vanilla-JS. **Kein React, kein Tailwind, kein npm im Frontend.**
-- Branch: `claude/petworld-shopify-brainstorm-9go0du` · Baseline: Commit `cacbd97`
+- Branch: `claude/petworld-startup-tm1z18` · Baseline: Commit `cacbd97`
 - Personalisierung über **teeinblue** als App-Embed — injiziert sich per JavaScript selbst
 
 ```bash

@@ -1,6 +1,6 @@
 # Übergabe
 
-Stand: **12.08.2026**
+Stand: **13.08.2026**
 
 ## Sitzung starten
 
@@ -71,9 +71,11 @@ Als lesbare Seite: **[PetWorld Shop-Audit](https://claude.ai/code/artifact/eb800
 
 ## Als Nächstes
 
-**Blockiert, bis der Shopify-Connector im Chat aktiv ist:**
-301-Weiterleitungen der GemPages-URLs · Impressum zusammenführen ·
-GemPages-Dateien entfernen · Versandschwelle gegenprüfen
+**Am 13.08. mit aktivem Connector erledigt:** sechs 301-Weiterleitungen gesetzt,
+die fünf GemPages-Zwillinge und das doppelte Impressum stillgelegt, das
+Fußzeilenmenü korrigiert. Versandschwelle gegengeprüft — steht noch bei 50 €.
+
+**Jetzt frei:** GemPages-Dateien aus dem Theme entfernen, danach die App deinstallieren.
 
 **Sofort möglich:**
 Die **Personalizer-Vorlage** für teeinblue — exakte Feldreihenfolge, Bedingungsketten,

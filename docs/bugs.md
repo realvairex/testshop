@@ -36,13 +36,22 @@ im server-gerenderten HTML für Merchant Center und Suchergebnisse.
 *Fundort:* `templates/product.json`
 *Details:* `theme-audit.md`, Befund 1
 
-### B4 · Doppelte Seiten im Index
+### B4 · Doppelte Seiten im Index — ✅ Weiterleitungen stehen, Rest offen
 
-Fünf GemPages-Seiten sind unverlinkte Zwillinge der nativen Fassungen — beide
-veröffentlicht und crawlbar. Dazu existiert das Impressum zweimal
-(`impressum` und `copy-of-uber-uns`).
-*Lösung:* 301-Weiterleitungen auf die native Fassung, dann GemPages entfernen.
-**Braucht den Shopify-Connector.**
+Fünf GemPages-Seiten waren unverlinkte Zwillinge der nativen Fassungen, dazu das
+Impressum doppelt (`impressum` und `copy-of-uber-uns`).
+
+**Erledigt am 13.08.:** Sechs 301-Weiterleitungen angelegt, alle sechs Zwillinge auf
+unveröffentlicht gesetzt, der Menüeintrag im Shopify-Menü `footer` von
+`copy-of-uber-uns` auf `impressum` umgehängt. Beide Impressum-Seiten hatten leeren
+Body und denselben `templateSuffix: impressum` — sie rendern identisch aus
+`templates/page.impressum.json`, es ging kein Inhalt verloren.
+
+**Noch offen:** GemPages-Dateien aus dem Theme entfernen (60 Sections, 31 Templates,
+`gp-global.css`), danach die App deinstallieren.
+**Nicht verifiziert:** Ob die Weiterleitungen im Browser wirklich 301 liefern —
+`pet-world.at` ist aus dieser Umgebung nicht erreichbar (U2). Belegt ist nur der
+API-Zustand.
 
 ---
 
@@ -104,6 +113,15 @@ Sieben `LX-…`-Codes stammen von **Loox**, die App ist deinstalliert. Je einmal
 10 %, keiner je eingelöst — harmlos, aber Ballast.
 `Weihnachten2025` ist im August 2026 noch aktiv und untergräbt die nächste
 Weihnachtsaktion.
+
+### B22 · Verwaiste Gelato-Versandprofile
+
+Drei Versandprofile **Gelato: Small Posters**, **Gelato: Large Posters**,
+**Gelato: Small Framed Posters** liegen ohne Standortgruppen im Shop, obwohl Gelato
+deinstalliert ist und kein Produkt daran hängt (X-Frage 16). Kein aktiver Fehler,
+aber Ballast, der bei der nächsten Versandanalyse verwirrt.
+*Gefunden am 13.08. über `deliveryProfiles`.*
+*Lösung:* Im Admin unter Versand löschen — Betreiber-Aufgabe.
 
 ### B14 · `scheme-3` vollständig transparent
 
@@ -174,3 +192,4 @@ Erreichbar sind nur GitHub und Paket-Registries. **Blockiert:** `pet-world.at`,
 | B19 | Shogun lud über `{% include 'shogun-content-handler' %}` in `theme.liquid` auf **jeder Seite** mit, obwohl die App längst deinstalliert war | 12.08. | 15 Dateien und alle Includes entfernt |
 | B20 | PageFly-Dateien und vier `ss-`Sections deinstallierter Apps lagen ungenutzt im Theme | 12.08. | Entfernt |
 | B21 | Bilder-Leitfaden nur über die Fußzeile erreichbar, obwohl ein gutes Foto die Voraussetzung für ein gutes Poster ist | 12.08. | Hinweis mit Link direkt unter dem Produkttitel |
+| B23 | Das Shopify-Menü `footer` verlinkte „Impressum" auf die **Zwillingsseite** `copy-of-uber-uns` statt auf `impressum` — wäre beim Stilllegen zu einem 404 geworden | 13.08. | Menüeintrag auf `impressum` umgehängt. Das Menü wird vom Theme derzeit nicht gerendert, der Fehler war deshalb unsichtbar |

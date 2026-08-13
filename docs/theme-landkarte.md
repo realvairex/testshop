@@ -19,7 +19,8 @@ Orientierung im Fabric-3.1.0-Theme. Stand 12.08.2026.
 | Weiterempfehlen | `templates/page.weiterempfehlen-2.json` | `main-page` |
 
 **25 weitere Templates sind tot** — Backups von GemPages und Shogun (`gem-`,
-`gp-template`). Sie werden entfernt, sobald die Weiterleitungen stehen.
+`gp-template`). **Die Weiterleitungen stehen seit 13.08.** — die fünf GemPages-Seiten
+sind unveröffentlicht und umgeleitet, die Dateien können entfernt werden.
 
 ## Navigation — die wichtigste Falle
 
@@ -32,7 +33,7 @@ Seiten fälschlich für unverlinkt (Korrektur K3).
 | Hauptmenü | Shopify-Menü `main-menu`, eingebunden über `_header-menu` in `sections/header-group.json` |
 | Fußzeile: Service-Links | **fest** in `sections/footer-group.json` → `section_LQwpa6` |
 | Fußzeile: Rechtstexte | **fest** in `sections/footer-group.json` → `section_EenfMe` |
-| Shopify-Menü `footer` | **wird vom Theme nicht verwendet** — Karteileiche |
+| Shopify-Menü `footer` | **wird vom Theme nicht verwendet** — Karteileiche. Zeigte bis 13.08. auf die stillgelegte Impressum-Fassung `copy-of-uber-uns`, ist jetzt auf `impressum` umgehängt |
 
 **Regel: Navigation immer in beiden Quellen prüfen.**
 
