@@ -30,6 +30,7 @@ aus dem Gespräch ins Repo, bevor der Chat geschlossen wird.
 | [`kontrast-audit.md`](kontrast-audit.md) | WCAG-Rechnung aller 13 Farbschemata |
 | [`startseite-befunde.md`](startseite-befunde.md) | Sichtprüfung Hero und Newsletter |
 | [`markennamen.md`](markennamen.md) | DOGUE & Co, Vergleich mit heybalu.com |
+| [`ci-palette-kandidat.md`](ci-palette-kandidat.md) | Salbei-Palette für den geplanten CI-Wechsel, mit Kontrastrechnung |
 | [`personalizer-app-entscheidung.md`](personalizer-app-entscheidung.md) | teeinblue behalten oder Customily |
 | [`setup-lokal.md`](setup-lokal.md) | Lokale Live-Vorschau einrichten |
 | [`archiv-gempages/`](archiv-gempages/) | Gesicherte Inhalte vor dem GemPages-Ausbau |

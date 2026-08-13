@@ -65,6 +65,9 @@ Bei 26 Sessions im Monat bringt Werbung nichts, solange 0,14 % konvertieren.
 
 ### Danach: Design-System
 
+- [ ] **CI-Farbwechsel prüfen** — Salbei-Palette vom Betreiber übergeben (13.08.),
+      liegt in `ci-palette-kandidat.md`. Achtung: reine Flächenpalette, kein Ton
+      trägt weißen Text. Braucht dunklen Textanker und einen Akzentton
 - [ ] Token-Architektur anlegen (primitive → semantic → component)
 - [ ] Heading-Deckkraft von `#030302c2` auf 100 % korrigieren
 - [ ] Zweite Schriftfamilie für Headlines — aktuell ist alles Asap

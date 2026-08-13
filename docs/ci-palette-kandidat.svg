@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" width="640" height="800" font-family="Asap, system-ui, sans-serif">
+  <title>CI-Palette Kandidat — Salbei-Skala, 13.08.2026</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#728156"/>
+      <stop offset="55%" stop-color="#B6C99B"/>
+      <stop offset="100%" stop-color="#E7F5DC"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="800" fill="url(#bg)"/>
+
+  <text x="600" y="52" text-anchor="end" font-size="15" font-weight="700" fill="#3f4a2e">PetWorld · CI-Kandidat</text>
+
+  <!-- gestapelte Toene, hell nach dunkel -->
+  <g>
+    <rect x="150" y="120"  width="340" height="96" rx="48" fill="#E7F5DC"/>
+    <text x="182" y="174" font-size="17" font-weight="700" fill="#5d6b46">#E7F5DC</text>
+
+    <rect x="150" y="216" width="340" height="96" rx="48" fill="#CFE1B9"/>
+    <text x="182" y="270" font-size="17" font-weight="700" fill="#5d6b46">#CFE1B9</text>
+
+    <rect x="150" y="312" width="340" height="96" rx="48" fill="#B6C99B"/>
+    <text x="182" y="366" font-size="17" font-weight="700" fill="#4a5637">#B6C99B</text>
+
+    <rect x="150" y="408" width="340" height="96" rx="48" fill="#98A77C"/>
+    <text x="182" y="462" font-size="17" font-weight="700" fill="#030302">#98A77C</text>
+
+    <rect x="150" y="504" width="340" height="96" rx="48" fill="#88976C"/>
+    <text x="182" y="558" font-size="17" font-weight="700" fill="#030302">#88976C</text>
+
+    <rect x="150" y="600" width="340" height="120" rx="48" fill="#728156"/>
+    <text x="182" y="666" font-size="17" font-weight="700" fill="#030302">#728156</text>
+  </g>
+
+  <text x="320" y="762" text-anchor="middle" font-size="13" fill="#3f4a2e">
+    Flächenpalette — kein Ton trägt weißen Text nach WCAG AA. Details in ci-palette-kandidat.md
+  </text>
+</svg>
