@@ -27,6 +27,7 @@ aus dem Gespräch ins Repo, bevor der Chat geschlossen wird.
 | [`zahlen.md`](zahlen.md) | Traffic, Conversion, Kosten, Versand, Werbung |
 | [`theme-audit.md`](theme-audit.md) | Fabric 3.1.0, Page-Builder, Karteileichen |
 | [`personalizer-audit.md`](personalizer-audit.md) | Neun Befunde zum teeinblue-Ablauf |
+| [`personalizer-vorlage.md`](personalizer-vorlage.md) | **Arbeitsanweisung für den teeinblue-Admin** — Felder, Bedingungen, fertige Texte |
 | [`kontrast-audit.md`](kontrast-audit.md) | WCAG-Rechnung aller 13 Farbschemata |
 | [`startseite-befunde.md`](startseite-befunde.md) | Sichtprüfung Hero und Newsletter |
 | [`markennamen.md`](markennamen.md) | DOGUE & Co, Vergleich mit heybalu.com |
@@ -80,9 +81,9 @@ gegengeprüft: steht noch bei 50 €.
 
 **Beim Betreiber:** GemPages kann jetzt im Admin deinstalliert werden.
 
-**Sofort möglich:**
-Die **Personalizer-Vorlage** für teeinblue — exakte Feldreihenfolge, Bedingungsketten,
-Beschriftungen und fertige Texte. Das ist der direkteste Hebel auf die Conversion.
+**Beim Betreiber, größter Hebel:** Die **Personalizer-Vorlage** abarbeiten
+(`personalizer-vorlage.md`). Von neun Pflichtfeldern auf zwei, Foto-Upload nach oben.
+Zuerst der Fünf-Minuten-Test, ob ein Bild-Upload als Bedingung dienen kann.
 
 **Beim Betreiber:**
 Versandschwelle auf 35 € · Live-Theme duplizieren · GemPages noch **nicht**

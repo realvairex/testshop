@@ -117,6 +117,24 @@ Sieben `LX-…`-Codes stammen von **Loox**, die App ist deinstalliert. Je einmal
 `Weihnachten2025` ist im August 2026 noch aktiv und untergräbt die nächste
 Weihnachtsaktion.
 
+### B24 · Produktoption „Color" hat nur den Wert `Default`
+
+Die Poster haben drei Varianten-Optionen: `Available Product`, `Color`, `Size`.
+**`Color` hat genau einen Wert: `Default`** — eine funktionslose Option, die in jedem
+Variantentitel mitläuft (`Poster ohne Rahmen / Default / 20x30cm`) und damit auch in
+den Bestelldaten steht.
+*Gefunden am 13.08. an PLAYDOG, dürfte alle Poster betreffen — nicht alle geprüft.*
+*Lösung:* Im Shopify-Admin entfernen. **Vorher prüfen, ob teeinblue die Campaign über
+diese Option zuordnet**, sonst bricht die Zuordnung.
+
+### B25 · 50×75 cm ohne Rahmenvariante
+
+Für die größte Postergröße existiert keine gerahmte Variante — nur 20×30 (39,95 €) und
+40×60 (64,95 €) gibt es mit Rahmen. Ohne Bedingung im Personalizer kann der Kunde eine
+Kombination ansteuern, die es nicht gibt.
+*Lösung:* Bedingung in teeinblue, siehe `personalizer-vorlage.md`. Alternativ die
+gerahmte 50×75-Variante bei merchOne anlegen, falls verfügbar.
+
 ### B22 · Verwaiste Gelato-Versandprofile
 
 Drei Versandprofile **Gelato: Small Posters**, **Gelato: Large Posters**,

@@ -116,17 +116,20 @@ Ungeklärt, ob überhaupt genutzt: **Stack** ($9,99/Monat), **TinySEO**, **Addre
 
 ## 🎨 Bei dir — teeinblue
 
-Vorlage liefere ich, sobald die Produktseite steht.
+✅ **Vorlage liegt vor: [`personalizer-vorlage.md`](personalizer-vorlage.md)** (13.08.)
+— mit Feldreihenfolge, Bedingungen, Beschriftungen und fertigen Texten zum Abarbeiten.
 
+- [ ] ⚠️ **Zuerst testen: Kann ein Bild-Upload als Bedingung dienen?** Fünf Minuten,
+      entscheidet zwischen Zweig A und B der Vorlage
 - [ ] **Foto-Upload an die erste Stelle**
 - [ ] Pflichtfelder auf **zwei** reduzieren (Foto + Name), Rest vorbelegen
-- [ ] **Bedingungskette** aufbauen für den Schritt-für-Schritt-Ablauf
-- [ ] **Rahmen-Optionen mit Miniaturbild und Preisaufschlag**
+- [ ] Farbfelder von **20 auf 6**, eingeklappt hinter „Design anpassen"
+- [ ] **Rahmen-Optionen mit Miniaturbild und Preisaufschlag** (+20 € / +35 €)
+- [ ] ⚠️ **Bedingung: 50×75 cm schließt Rahmen aus** — sonst führt die Auswahl in eine
+      Variante, die es nicht gibt
 - [ ] Beschriftungen in Kundensprache — „Rahmen wählen" statt „Verfügbare Produkte"
 - [ ] Veralteten Platzhalter „AUGUST 2025" ersetzen
-- [ ] Haftungstext freundlicher formulieren
-- [ ] ⚠️ **Testen: Kann ein Bild-Upload als Bedingung dienen?** Davon hängt ab, ob
-      Schritt 1 des Wizards nativ funktioniert
+- [ ] Haftungstext ersetzen — Neufassung steht in der Vorlage
 
 ---
 
